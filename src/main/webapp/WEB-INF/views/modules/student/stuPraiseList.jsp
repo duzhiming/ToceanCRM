@@ -21,13 +21,16 @@
 		<li class="active"><a href="${ctx}/student/stuPraise/">表扬列表</a></li>
 		<shiro:hasPermission name="student:stuPraise:edit"><li><a href="${ctx}/student/stuPraise/form">表扬添加</a></li></shiro:hasPermission>
 	</ul>
-
+	<form:form id="searchForm" modelAttribute="stuPraise" action="${ctx}/student/stuPraise/" method="post" class="breadcrumb form-search">
+		<input id="pageNo" name="pageNo" type="hidden" value="${page.pageNo}"/>
+		<input id="pageSize" name="pageSize" type="hidden" value="${page.pageSize}"/>
+	</form:form>
 	<sys:message content="${message}"/>
 	<table id="contentTable" class="table table-striped table-bordered table-condensed">
 		<thead>
 			<tr>
 				<th>序号</th>
-				<th>学员</th>
+				<th>姓名</th>
 				<th>班级</th>
 				<th>表扬时间</th>
 				<th>原因</th>
@@ -39,17 +42,17 @@
 		<c:forEach items="${page.list}" var="stuPraise">
 			<tr>
 				<td>
-						1
-				</td>
-				<td>
-						${stuPraise.user.name}
-				</td>
-				<td>
-						${stuPraise.user.cname}
+						${stuPraise.student.id}
 				</td>
 				<td><a href="${ctx}/student/stuPraise/form?id=${stuPraise.id}">
-					<fmt:formatDate value="${stuPraise.praisedate}" pattern="yyyy-MM-dd HH:mm:ss"/>
+						${stuPraise.student.name}
 				</a></td>
+				<td>
+						${stuPraise.student.cname}
+				</td>
+				<td>
+					<fmt:formatDate value="${stuPraise.praisedate}" pattern="yyyy-MM-dd HH:mm:ss"/>
+				</td>
 				<td>
 					${stuPraise.reason}
 				</td>

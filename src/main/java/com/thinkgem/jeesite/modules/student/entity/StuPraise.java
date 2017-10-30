@@ -3,7 +3,6 @@
  */
 package com.thinkgem.jeesite.modules.student.entity;
 
-import javax.validation.constraints.NotNull;
 import java.util.Date;
 import com.fasterxml.jackson.annotation.JsonFormat;
 import org.hibernate.validator.constraints.Length;
@@ -18,19 +17,17 @@ import com.thinkgem.jeesite.common.persistence.DataEntity;
 public class StuPraise extends DataEntity<StuPraise> {
 	
 	private static final long serialVersionUID = 1L;
-	private StudentInfo user;		// 编号
 	private Date praisedate;		// 表扬时间
 	private String praiseway;		// 表扬的方式
 	private String reason;		// 原因
 	private String score;		// 分数
-	private Long studentId;		// 学生编号
+	private StudentInfo studentId;		// 学生编号
 	private String booker;		// 登记人
 	private Date bookdate;		// 登记时间
 	private String confirmer;		// 确认人
 	private Date confirmdate;		// 确认时间
 	private String approve;		// 批准
 	private String status;		// 状态
-	private String headship;		// headship
 	private String opinion;		// 建议
 	
 	public StuPraise() {
@@ -41,15 +38,6 @@ public class StuPraise extends DataEntity<StuPraise> {
 		super(id);
 	}
 
-	@NotNull(message="编号不能为空")
-	public StudentInfo getUser() {
-		return user;
-	}
-
-	public void setUser(StudentInfo user) {
-		this.user = user;
-	}
-	
 	@JsonFormat(pattern = "yyyy-MM-dd HH:mm:ss")
 	public Date getPraisedate() {
 		return praisedate;
@@ -85,12 +73,12 @@ public class StuPraise extends DataEntity<StuPraise> {
 		this.score = score;
 	}
 	
-	public Long getStudentId() {
+	public StudentInfo getStudent() {
 		return studentId;
 	}
 
-	public void setStudentId(Long studentId) {
-		this.studentId = studentId;
+	public void setStudent(StudentInfo student) {
+		this.studentId = student;
 	}
 	
 	@Length(min=0, max=10, message="登记人长度必须介于 0 和 10 之间")
@@ -145,15 +133,6 @@ public class StuPraise extends DataEntity<StuPraise> {
 
 	public void setStatus(String status) {
 		this.status = status;
-	}
-	
-	@Length(min=0, max=255, message="headship长度必须介于 0 和 255 之间")
-	public String getHeadship() {
-		return headship;
-	}
-
-	public void setHeadship(String headship) {
-		this.headship = headship;
 	}
 	
 	public String getOpinion() {

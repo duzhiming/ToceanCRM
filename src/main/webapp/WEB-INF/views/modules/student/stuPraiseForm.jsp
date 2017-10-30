@@ -63,7 +63,7 @@
 		<div class="control-group">
 			<label class="control-label">学生编号：</label>
 			<div class="controls">
-				<form:input path="studentId" htmlEscape="false" maxlength="20" class="input-xlarge  digits"/>
+				<form:input path="student.id" htmlEscape="false" maxlength="20" class="input-xlarge "/>
 			</div>
 		</div>
 		<div class="control-group">
@@ -104,12 +104,6 @@
 			<label class="control-label">状态：</label>
 			<div class="controls">
 				<form:input path="status" htmlEscape="false" maxlength="11" class="input-xlarge "/>
-			</div>
-		</div>
-		<div class="control-group">
-			<label class="control-label">headship：</label>
-			<div class="controls">
-				<form:input path="headship" htmlEscape="false" maxlength="255" class="input-xlarge "/>
 			</div>
 		</div>
 		<div class="control-group">

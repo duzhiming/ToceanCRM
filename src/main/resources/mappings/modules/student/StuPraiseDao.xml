@@ -3,26 +3,25 @@
 <mapper namespace="com.thinkgem.jeesite.modules.student.dao.StuPraiseDao">
     
 	<sql id="stuPraiseColumns">
-		a.id AS "user.id",
-		u1.name AS "user.name",
-		u1.cname AS "user.cname",
+		a.id AS "id",
 		a.praisedate AS "praisedate",
 		a.praiseway AS "praiseway",
 		a.reason AS "reason",
 		a.score AS "score",
-		a.student_id AS "studentId",
+		a.student_id AS "student.id",
+		u1.name AS "student.name",
+		u1.cname AS "student.cname",
 		a.booker AS "booker",
 		a.bookdate AS "bookdate",
 		a.confirmer AS "confirmer",
 		a.confirmdate AS "confirmdate",
 		a.approve AS "approve",
 		a.status AS "status",
-		a.headship AS "headship",
 		a.opinion AS "opinion"
 	</sql>
 	
 	<sql id="stuPraiseJoins">
-		LEFT JOIN student_info u1 on u1.userid = a.id
+		LEFT JOIN student_info u1 ON u1.userid = a.student_id
 	</sql>
     
 	<select id="get" resultType="StuPraise">
@@ -69,7 +68,6 @@
 	
 	<insert id="insert">
 		INSERT INTO student_praise(
-			id,
 			praisedate,
 			praiseway,
 			reason,
@@ -81,22 +79,19 @@
 			confirmdate,
 			approve,
 			status,
-			headship,
 			opinion
 		) VALUES (
-			#{user},
 			#{praisedate},
 			#{praiseway},
 			#{reason},
 			#{score},
-			#{studentId},
+			#{student.id},
 			#{booker},
 			#{bookdate},
 			#{confirmer},
 			#{confirmdate},
 			#{approve},
 			#{status},
-			#{headship},
 			#{opinion}
 		)
 	</insert>
@@ -107,14 +102,13 @@
 			praiseway = #{praiseway},
 			reason = #{reason},
 			score = #{score},
-			student_id = #{studentId},
+			student_id = #{student.id},
 			booker = #{booker},
 			bookdate = #{bookdate},
 			confirmer = #{confirmer},
 			confirmdate = #{confirmdate},
 			approve = #{approve},
 			status = #{status},
-			headship = #{headship},
 			opinion = #{opinion}
 		WHERE id = #{id}
 	</update>
