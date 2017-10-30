@@ -1,8 +1,12 @@
+com\thinkgem\jeesite\modules\student\service\StuPraiseService.class
 com\thinkgem\jeesite\modules\book\service\SortService.class
 com\thinkgem\jeesite\modules\book\dao\SortDao.class
 com\thinkgem\jeesite\modules\book\entity\Product.class
+com\thinkgem\jeesite\modules\student\web\StuPraiseController.class
+com\thinkgem\jeesite\modules\student\entity\StuPraise.class
 com\thinkgem\jeesite\modules\book\web\ProductController.class
 com\thinkgem\jeesite\modules\book\entity\Sort.class
+com\thinkgem\jeesite\modules\student\dao\StuPraiseDao.class
 com\thinkgem\jeesite\modules\book\service\ProductService.class
 com\thinkgem\jeesite\modules\book\dao\ProductDao.class
 com\thinkgem\jeesite\modules\book\web\SortController.class
