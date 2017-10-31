@@ -14,7 +14,7 @@ import com.thinkgem.jeesite.modules.student.entity.StudentInfo;
 import com.thinkgem.jeesite.modules.student.dao.StudentInfoDao;
 
 /**
- * 学生管理Service
+ * 学生转介绍管理Service
  * @author duzhiming
  * @version 2017-10-31
  */

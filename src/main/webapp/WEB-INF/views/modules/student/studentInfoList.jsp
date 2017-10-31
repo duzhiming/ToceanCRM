@@ -2,7 +2,7 @@
 <%@ include file="/WEB-INF/views/include/taglib.jsp"%>
 <html>
 <head>
-	<title>学生管理</title>
+	<title>转介绍管理</title>
 	<meta name="decorator" content="default"/>
 	<script type="text/javascript">
 		$(document).ready(function() {
@@ -18,8 +18,8 @@
 </head>
 <body>
 	<ul class="nav nav-tabs">
-		<li class="active"><a href="${ctx}/student/studentInfo/">学生列表</a></li>
-		<shiro:hasPermission name="student:studentInfo:edit"><li><a href="${ctx}/student/studentInfo/form">学生添加</a></li></shiro:hasPermission>
+		<li class="active"><a href="${ctx}/student/studentInfo/">转介绍列表</a></li>
+		<shiro:hasPermission name="student:studentInfo:edit"><li><a href="${ctx}/student/studentInfo/form">转介绍添加</a></li></shiro:hasPermission>
 	</ul>
 	<form:form id="searchForm" modelAttribute="studentInfo" action="${ctx}/student/studentInfo/" method="post" class="breadcrumb form-search">
 		<input id="pageNo" name="pageNo" type="hidden" value="${page.pageNo}"/>
@@ -39,12 +39,12 @@
 	<table id="contentTable" class="table table-striped table-bordered table-condensed">
 		<thead>
 			<tr>
-				<th>序号</th>
 				<th>学号</th>
 				<th>姓名</th>
 				<th>班级</th>
 				<th>性别</th>
 				<th>学历</th>
+				<th>毕业学校</th>
 				<th>入学联系电话</th>
 				<th>毕业联系电话</th>
 				<shiro:hasPermission name="student:studentInfo:edit"><th>操作</th></shiro:hasPermission>
@@ -53,12 +53,9 @@
 		<tbody>
 		<c:forEach items="${page.list}" var="studentInfo">
 			<tr>
-				<td>
-					${studentInfo.userid}
-				</td>
-				<td>
+				<td><a href="${ctx}/student/studentInfo/form?id=${studentInfo.id}">
 					${studentInfo.code}
-				</td>
+				</a></td>
 				<td>
 					${studentInfo.name}
 				</td>
@@ -72,14 +69,17 @@
 					${studentInfo.schoolrecord}
 				</td>
 				<td>
+					${studentInfo.graduatedate}
+				</td>
+				<td>
 					${studentInfo.telephone}
 				</td>
 				<td>
 					${studentInfo.gtelephone}
 				</td>
 				<shiro:hasPermission name="student:studentInfo:edit"><td>
-    				<a href="${ctx}/student/studentInfo/form?id=${studentInfo.userid}">修改</a>
-					<a href="${ctx}/student/studentInfo/delete?id=${studentInfo.userid}" onclick="return confirmx('确认要删除该学生吗？', this.href)">删除</a>
+    				<a href="${ctx}/student/studentInfo/form?id=${studentInfo.id}">修改</a>
+					<a href="${ctx}/student/studentInfo/delete?id=${studentInfo.id}" onclick="return confirmx('确认要删除该转介绍吗？', this.href)">删除</a>
 				</td></shiro:hasPermission>
 			</tr>
 		</c:forEach>

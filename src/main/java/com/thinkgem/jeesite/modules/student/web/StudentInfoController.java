@@ -23,7 +23,7 @@ import com.thinkgem.jeesite.modules.student.entity.StudentInfo;
 import com.thinkgem.jeesite.modules.student.service.StudentInfoService;
 
 /**
- * 学生管理Controller
+ * 学生转介绍管理Controller
  * @author duzhiming
  * @version 2017-10-31
  */
@@ -68,7 +68,7 @@ public class StudentInfoController extends BaseController {
 			return form(studentInfo, model);
 		}
 		studentInfoService.save(studentInfo);
-		addMessage(redirectAttributes, "保存学生成功");
+		addMessage(redirectAttributes, "保存转介绍成功");
 		return "redirect:"+Global.getAdminPath()+"/student/studentInfo/?repage";
 	}
 	
@@ -76,7 +76,7 @@ public class StudentInfoController extends BaseController {
 	@RequestMapping(value = "delete")
 	public String delete(StudentInfo studentInfo, RedirectAttributes redirectAttributes) {
 		studentInfoService.delete(studentInfo);
-		addMessage(redirectAttributes, "删除学生成功");
+		addMessage(redirectAttributes, "删除转介绍成功");
 		return "redirect:"+Global.getAdminPath()+"/student/studentInfo/?repage";
 	}
 
