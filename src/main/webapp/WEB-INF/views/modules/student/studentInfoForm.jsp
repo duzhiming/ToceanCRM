@@ -2,7 +2,7 @@
 <%@ include file="/WEB-INF/views/include/taglib.jsp"%>
 <html>
 <head>
-	<title>转介绍管理</title>
+	<title>学生管理</title>
 	<meta name="decorator" content="default"/>
 	<script type="text/javascript">
 		$(document).ready(function() {
@@ -27,8 +27,8 @@
 </head>
 <body>
 	<ul class="nav nav-tabs">
-		<li><a href="${ctx}/student/studentInfo/">转介绍列表</a></li>
-		<li class="active"><a href="${ctx}/student/studentInfo/form?id=${studentInfo.id}">转介绍<shiro:hasPermission name="student:studentInfo:edit">${not empty studentInfo.id?'修改':'添加'}</shiro:hasPermission><shiro:lacksPermission name="student:studentInfo:edit">查看</shiro:lacksPermission></a></li>
+		<li><a href="${ctx}/student/studentInfo/">学生列表</a></li>
+		<li class="active"><a href="${ctx}/student/studentInfo/form?id=${studentInfo.id}">学生<shiro:hasPermission name="student:studentInfo:edit">${not empty studentInfo.id?'修改':'添加'}</shiro:hasPermission><shiro:lacksPermission name="student:studentInfo:edit">查看</shiro:lacksPermission></a></li>
 	</ul><br/>
 	<form:form id="inputForm" modelAttribute="studentInfo" action="${ctx}/student/studentInfo/save" method="post" class="form-horizontal">
 		<form:hidden path="id"/>
@@ -115,7 +115,7 @@
 			</div>
 		</div>
 		<div class="control-group">
-			<label class="control-label">毕业学校：</label>
+			<label class="control-label">毕业时间：</label>
 			<div class="controls">
 				<form:input path="graduatedate" htmlEscape="false" maxlength="10" class="input-xlarge "/>
 			</div>
@@ -360,12 +360,6 @@
 			</div>
 		</div>
 		<div class="control-group">
-			<label class="control-label">classes_id：</label>
-			<div class="controls">
-				<form:input path="classesId" htmlEscape="false" maxlength="20" class="input-xlarge  digits"/>
-			</div>
-		</div>
-		<div class="control-group">
 			<label class="control-label">班主任评价：</label>
 			<div class="controls">
 				<form:input path="teacherevaluation" htmlEscape="false" class="input-xlarge "/>
@@ -417,12 +411,6 @@
 			<label class="control-label">第三次项目考核成绩：</label>
 			<div class="controls">
 				<form:input path="thirdpoll" htmlEscape="false" class="input-xlarge  number"/>
-			</div>
-		</div>
-		<div class="control-group">
-			<label class="control-label">file_id：</label>
-			<div class="controls">
-				<form:input path="fileId" htmlEscape="false" maxlength="20" class="input-xlarge  digits"/>
 			</div>
 		</div>
 		<div class="form-actions">

@@ -8,7 +8,7 @@ import com.thinkgem.jeesite.common.persistence.annotation.MyBatisDao;
 import com.thinkgem.jeesite.modules.student.entity.StudentInfo;
 
 /**
- * 学生转介绍管理DAO接口
+ * 学生管理DAO接口
  * @author duzhiming
  * @version 2017-10-31
  */

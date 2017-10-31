@@ -20,7 +20,7 @@ public class StudentIntroduce extends DataEntity<StudentIntroduce> {
 	private String student;		// 学员
 	private Date introdate;		// 介绍日期
 	private String empname;		// 介绍人编号
-	private StudentInfo students;		// 学员编号
+	private Custom student;		// 学员编号
 	
 	public StudentIntroduce() {
 		super();
@@ -57,12 +57,12 @@ public class StudentIntroduce extends DataEntity<StudentIntroduce> {
 		this.empname = empname;
 	}
 	
-	public StudentInfo getStudents() {
-		return students;
+	public Custom getStudent() {
+		return student;
 	}
 
-	public void setStudents(StudentInfo student) {
-		this.students = student;
+	public void setStudent(Custom student) {
+		this.student = student;
 	}
 	
 }
