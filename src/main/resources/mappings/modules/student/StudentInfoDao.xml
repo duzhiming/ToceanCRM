@@ -56,7 +56,6 @@
 		a.salary AS "salary",
 		a.returnvist AS "returnvist",
 		a.other AS "other",
-		a.classes_id AS "classesId",
 		a.teacherevaluation AS "teacherevaluation",
 		a.pmevaluation AS "pmevaluation",
 		a.firstwritten AS "firstwritten",
@@ -65,8 +64,7 @@
 		a.scjp AS "scjp",
 		a.firstpoll AS "firstpoll",
 		a.secondpoll AS "secondpoll",
-		a.thirdpoll AS "thirdpoll",
-		a.file_id AS "fileId"
+		a.thirdpoll AS "thirdpoll"
 	</sql>
 	
 	<sql id="studentInfoJoins">
@@ -178,7 +176,6 @@
 			salary,
 			returnvist,
 			other,
-			classes_id,
 			teacherevaluation,
 			pmevaluation,
 			firstwritten,
@@ -187,8 +184,7 @@
 			scjp,
 			firstpoll,
 			secondpoll,
-			thirdpoll,
-			file_id
+			thirdpoll
 		) VALUES (
 			#{userid},
 			#{code},
@@ -243,7 +239,6 @@
 			#{salary},
 			#{returnvist},
 			#{other},
-			#{classesId},
 			#{teacherevaluation},
 			#{pmevaluation},
 			#{firstwritten},
@@ -252,8 +247,7 @@
 			#{scjp},
 			#{firstpoll},
 			#{secondpoll},
-			#{thirdpoll},
-			#{fileId}
+			#{thirdpoll}
 		)
 	</insert>
 	
@@ -312,7 +306,6 @@
 			salary = #{salary},
 			returnvist = #{returnvist},
 			other = #{other},
-			classes_id = #{classesId},
 			teacherevaluation = #{teacherevaluation},
 			pmevaluation = #{pmevaluation},
 			firstwritten = #{firstwritten},
@@ -321,8 +314,7 @@
 			scjp = #{scjp},
 			firstpoll = #{firstpoll},
 			secondpoll = #{secondpoll},
-			thirdpoll = #{thirdpoll},
-			file_id = #{fileId}
+			thirdpoll = #{thirdpoll}
 		WHERE userid = #{id}
 	</update>
 	

@@ -71,7 +71,6 @@ public class StudentInfo extends DataEntity<StudentInfo> {
 	private Integer salary;		// 薪水
 	private String returnvist;		// 回访记录
 	private String other;		// 备注
-	private Long classesId;		// classes_id
 	private String teacherevaluation;		// 班主任评价
 	private String pmevaluation;		// 项目经理评价
 	private Double firstwritten;		// 第一次考试成绩
@@ -81,7 +80,6 @@ public class StudentInfo extends DataEntity<StudentInfo> {
 	private Double firstpoll;		// 第一次项目考核成绩
 	private Double secondpoll;		// 第二次项目考核成绩
 	private Double thirdpoll;		// 第三次项目考核成绩
-	private Long fileId;		// file_id
 	
 	public StudentInfo() {
 		super();
@@ -561,15 +559,7 @@ public class StudentInfo extends DataEntity<StudentInfo> {
 	public void setOther(String other) {
 		this.other = other;
 	}
-	
-	public Long getClassesId() {
-		return classesId;
-	}
 
-	public void setClassesId(Long classesId) {
-		this.classesId = classesId;
-	}
-	
 	public String getTeacherevaluation() {
 		return teacherevaluation;
 	}
@@ -641,13 +631,6 @@ public class StudentInfo extends DataEntity<StudentInfo> {
 	public void setThirdpoll(Double thirdpoll) {
 		this.thirdpoll = thirdpoll;
 	}
-	
-	public Long getFileId() {
-		return fileId;
-	}
 
-	public void setFileId(Long fileId) {
-		this.fileId = fileId;
-	}
 	
 }

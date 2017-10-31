@@ -360,12 +360,6 @@
 			</div>
 		</div>
 		<div class="control-group">
-			<label class="control-label">classes_id：</label>
-			<div class="controls">
-				<form:input path="classesId" htmlEscape="false" maxlength="20" class="input-xlarge  digits"/>
-			</div>
-		</div>
-		<div class="control-group">
 			<label class="control-label">班主任评价：</label>
 			<div class="controls">
 				<form:input path="teacherevaluation" htmlEscape="false" class="input-xlarge "/>
@@ -417,12 +411,6 @@
 			<label class="control-label">第三次项目考核成绩：</label>
 			<div class="controls">
 				<form:input path="thirdpoll" htmlEscape="false" class="input-xlarge  number"/>
-			</div>
-		</div>
-		<div class="control-group">
-			<label class="control-label">file_id：</label>
-			<div class="controls">
-				<form:input path="fileId" htmlEscape="false" maxlength="20" class="input-xlarge  digits"/>
 			</div>
 		</div>
 		<div class="form-actions">
