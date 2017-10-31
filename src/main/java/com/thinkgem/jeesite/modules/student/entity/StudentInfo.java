@@ -13,7 +13,7 @@ import com.thinkgem.jeesite.common.persistence.DataEntity;
 /**
  * 学生管理Entity
  * @author duzhiming
- * @version 2017-10-30
+ * @version 2017-10-31
  */
 public class StudentInfo extends DataEntity<StudentInfo> {
 	
@@ -50,15 +50,15 @@ public class StudentInfo extends DataEntity<StudentInfo> {
 	private String traincontext;		// 培训内容
 	private String oldcompany;		// 原工作单位
 	private String oldheadship;		// 原单位职位
-	private String oldsalary;		// 原单位薪水
+	private Integer oldsalary;		// 原单位薪水
 	private String familybackgroud;		// 家庭背景
 	private String parentstatus;		// 父母状况
 	private String jobdesign;		// 职业规划
 	private String target;		// 期望目标
 	private String hobby;		// 爱好
 	private String economy;		// 经济能力
-	private String qulityscore;		// 职业素质基础分
-	private String skillscore;		// 技术能力基础分
+	private Double qulityscore;		// 职业素质基础分
+	private Double skillscore;		// 技术能力基础分
 	private String innerheadship;		// 班级职务
 	private Date daneigraduatedate;		// 达内毕业时间
 	private String pic;		// 照片
@@ -68,19 +68,19 @@ public class StudentInfo extends DataEntity<StudentInfo> {
 	private String repayedcredit;		// 贷款情况
 	private String careerexclamation;		// 就业感言
 	private String company;		// 公司
-	private String salary;		// 薪水
+	private Integer salary;		// 薪水
 	private String returnvist;		// 回访记录
 	private String other;		// 备注
 	private Long classesId;		// classes_id
 	private String teacherevaluation;		// 班主任评价
 	private String pmevaluation;		// 项目经理评价
-	private String firstwritten;		// 第一次考试成绩
-	private String secondwritten;		// 第二次考试成绩
-	private String thirdwritten;		// 第三次考试成绩
-	private String scjp;		// SCJP考试成绩
-	private String firstpoll;		// 第一次项目考核成绩
-	private String secondpoll;		// 第二次项目考核成绩
-	private String thirdpoll;		// 第三次项目考核成绩
+	private Double firstwritten;		// 第一次考试成绩
+	private Double secondwritten;		// 第二次考试成绩
+	private Double thirdwritten;		// 第三次考试成绩
+	private Double scjp;		// SCJP考试成绩
+	private Double firstpoll;		// 第一次项目考核成绩
+	private Double secondpoll;		// 第二次项目考核成绩
+	private Double thirdpoll;		// 第三次项目考核成绩
 	private Long fileId;		// file_id
 	
 	public StudentInfo() {
@@ -379,12 +379,11 @@ public class StudentInfo extends DataEntity<StudentInfo> {
 		this.oldheadship = oldheadship;
 	}
 	
-	@Length(min=0, max=11, message="原单位薪水长度必须介于 0 和 11 之间")
-	public String getOldsalary() {
+	public Integer getOldsalary() {
 		return oldsalary;
 	}
 
-	public void setOldsalary(String oldsalary) {
+	public void setOldsalary(Integer oldsalary) {
 		this.oldsalary = oldsalary;
 	}
 	
@@ -442,19 +441,21 @@ public class StudentInfo extends DataEntity<StudentInfo> {
 		this.economy = economy;
 	}
 	
-	public String getQulityscore() {
+	@NotNull(message="职业素质基础分不能为空")
+	public Double getQulityscore() {
 		return qulityscore;
 	}
 
-	public void setQulityscore(String qulityscore) {
+	public void setQulityscore(Double qulityscore) {
 		this.qulityscore = qulityscore;
 	}
 	
-	public String getSkillscore() {
+	@NotNull(message="技术能力基础分不能为空")
+	public Double getSkillscore() {
 		return skillscore;
 	}
 
-	public void setSkillscore(String skillscore) {
+	public void setSkillscore(Double skillscore) {
 		this.skillscore = skillscore;
 	}
 	
@@ -510,7 +511,7 @@ public class StudentInfo extends DataEntity<StudentInfo> {
 		this.resumefilename = resumefilename;
 	}
 	
-	@Length(min=1, max=1, message="贷款情况长度必须介于 1 和 1 之间")
+	@Length(min=0, max=1, message="贷款情况长度必须介于 0 和 1 之间")
 	public String getRepayedcredit() {
 		return repayedcredit;
 	}
@@ -536,12 +537,11 @@ public class StudentInfo extends DataEntity<StudentInfo> {
 		this.company = company;
 	}
 	
-	@Length(min=0, max=11, message="薪水长度必须介于 0 和 11 之间")
-	public String getSalary() {
+	public Integer getSalary() {
 		return salary;
 	}
 
-	public void setSalary(String salary) {
+	public void setSalary(Integer salary) {
 		this.salary = salary;
 	}
 	
@@ -586,59 +586,59 @@ public class StudentInfo extends DataEntity<StudentInfo> {
 		this.pmevaluation = pmevaluation;
 	}
 	
-	public String getFirstwritten() {
+	public Double getFirstwritten() {
 		return firstwritten;
 	}
 
-	public void setFirstwritten(String firstwritten) {
+	public void setFirstwritten(Double firstwritten) {
 		this.firstwritten = firstwritten;
 	}
 	
-	public String getSecondwritten() {
+	public Double getSecondwritten() {
 		return secondwritten;
 	}
 
-	public void setSecondwritten(String secondwritten) {
+	public void setSecondwritten(Double secondwritten) {
 		this.secondwritten = secondwritten;
 	}
 	
-	public String getThirdwritten() {
+	public Double getThirdwritten() {
 		return thirdwritten;
 	}
 
-	public void setThirdwritten(String thirdwritten) {
+	public void setThirdwritten(Double thirdwritten) {
 		this.thirdwritten = thirdwritten;
 	}
 	
-	public String getScjp() {
+	public Double getScjp() {
 		return scjp;
 	}
 
-	public void setScjp(String scjp) {
+	public void setScjp(Double scjp) {
 		this.scjp = scjp;
 	}
 	
-	public String getFirstpoll() {
+	public Double getFirstpoll() {
 		return firstpoll;
 	}
 
-	public void setFirstpoll(String firstpoll) {
+	public void setFirstpoll(Double firstpoll) {
 		this.firstpoll = firstpoll;
 	}
 	
-	public String getSecondpoll() {
+	public Double getSecondpoll() {
 		return secondpoll;
 	}
 
-	public void setSecondpoll(String secondpoll) {
+	public void setSecondpoll(Double secondpoll) {
 		this.secondpoll = secondpoll;
 	}
 	
-	public String getThirdpoll() {
+	public Double getThirdpoll() {
 		return thirdpoll;
 	}
 
-	public void setThirdpoll(String thirdpoll) {
+	public void setThirdpoll(Double thirdpoll) {
 		this.thirdpoll = thirdpoll;
 	}
 	

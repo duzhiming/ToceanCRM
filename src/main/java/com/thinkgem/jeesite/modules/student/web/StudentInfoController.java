@@ -25,7 +25,7 @@ import com.thinkgem.jeesite.modules.student.service.StudentInfoService;
 /**
  * 学生管理Controller
  * @author duzhiming
- * @version 2017-10-30
+ * @version 2017-10-31
  */
 @Controller
 @RequestMapping(value = "${adminPath}/student/studentInfo")

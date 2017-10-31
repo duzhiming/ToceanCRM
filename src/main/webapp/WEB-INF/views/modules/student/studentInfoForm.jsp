@@ -115,7 +115,7 @@
 			</div>
 		</div>
 		<div class="control-group">
-			<label class="control-label">毕业学校：</label>
+			<label class="control-label">毕业时间：</label>
 			<div class="controls">
 				<form:input path="graduatedate" htmlEscape="false" maxlength="10" class="input-xlarge "/>
 			</div>
@@ -231,7 +231,7 @@
 		<div class="control-group">
 			<label class="control-label">原单位薪水：</label>
 			<div class="controls">
-				<form:input path="oldsalary" htmlEscape="false" maxlength="11" class="input-xlarge "/>
+				<form:input path="oldsalary" htmlEscape="false" maxlength="11" class="input-xlarge  digits"/>
 			</div>
 		</div>
 		<div class="control-group">
@@ -273,14 +273,14 @@
 		<div class="control-group">
 			<label class="control-label">职业素质基础分：</label>
 			<div class="controls">
-				<form:input path="qulityscore" htmlEscape="false" class="input-xlarge required"/>
+				<form:input path="qulityscore" htmlEscape="false" class="input-xlarge required number"/>
 				<span class="help-inline"><font color="red">*</font> </span>
 			</div>
 		</div>
 		<div class="control-group">
 			<label class="control-label">技术能力基础分：</label>
 			<div class="controls">
-				<form:input path="skillscore" htmlEscape="false" class="input-xlarge required"/>
+				<form:input path="skillscore" htmlEscape="false" class="input-xlarge required number"/>
 				<span class="help-inline"><font color="red">*</font> </span>
 			</div>
 		</div>
@@ -344,7 +344,7 @@
 		<div class="control-group">
 			<label class="control-label">薪水：</label>
 			<div class="controls">
-				<form:input path="salary" htmlEscape="false" maxlength="11" class="input-xlarge "/>
+				<form:input path="salary" htmlEscape="false" maxlength="11" class="input-xlarge  digits"/>
 			</div>
 		</div>
 		<div class="control-group">
@@ -380,43 +380,43 @@
 		<div class="control-group">
 			<label class="control-label">第一次考试成绩：</label>
 			<div class="controls">
-				<form:input path="firstwritten" htmlEscape="false" class="input-xlarge "/>
+				<form:input path="firstwritten" htmlEscape="false" class="input-xlarge  number"/>
 			</div>
 		</div>
 		<div class="control-group">
 			<label class="control-label">第二次考试成绩：</label>
 			<div class="controls">
-				<form:input path="secondwritten" htmlEscape="false" class="input-xlarge "/>
+				<form:input path="secondwritten" htmlEscape="false" class="input-xlarge  number"/>
 			</div>
 		</div>
 		<div class="control-group">
 			<label class="control-label">第三次考试成绩：</label>
 			<div class="controls">
-				<form:input path="thirdwritten" htmlEscape="false" class="input-xlarge "/>
+				<form:input path="thirdwritten" htmlEscape="false" class="input-xlarge  number"/>
 			</div>
 		</div>
 		<div class="control-group">
 			<label class="control-label">SCJP考试成绩：</label>
 			<div class="controls">
-				<form:input path="scjp" htmlEscape="false" class="input-xlarge "/>
+				<form:input path="scjp" htmlEscape="false" class="input-xlarge  number"/>
 			</div>
 		</div>
 		<div class="control-group">
 			<label class="control-label">第一次项目考核成绩：</label>
 			<div class="controls">
-				<form:input path="firstpoll" htmlEscape="false" class="input-xlarge "/>
+				<form:input path="firstpoll" htmlEscape="false" class="input-xlarge  number"/>
 			</div>
 		</div>
 		<div class="control-group">
 			<label class="control-label">第二次项目考核成绩：</label>
 			<div class="controls">
-				<form:input path="secondpoll" htmlEscape="false" class="input-xlarge "/>
+				<form:input path="secondpoll" htmlEscape="false" class="input-xlarge  number"/>
 			</div>
 		</div>
 		<div class="control-group">
 			<label class="control-label">第三次项目考核成绩：</label>
 			<div class="controls">
-				<form:input path="thirdpoll" htmlEscape="false" class="input-xlarge "/>
+				<form:input path="thirdpoll" htmlEscape="false" class="input-xlarge  number"/>
 			</div>
 		</div>
 		<div class="control-group">

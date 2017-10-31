@@ -45,7 +45,6 @@
 				<th>班级</th>
 				<th>性别</th>
 				<th>学历</th>
-				<th>毕业学校</th>
 				<th>入学联系电话</th>
 				<th>毕业联系电话</th>
 				<shiro:hasPermission name="student:studentInfo:edit"><th>操作</th></shiro:hasPermission>
@@ -55,7 +54,7 @@
 		<c:forEach items="${page.list}" var="studentInfo">
 			<tr>
 				<td>
-
+					${studentInfo.userid}
 				</td>
 				<td>
 					${studentInfo.code}
@@ -71,9 +70,6 @@
 				</td>
 				<td>
 					${studentInfo.schoolrecord}
-				</td>
-				<td>
-					${studentInfo.graduatedate}
 				</td>
 				<td>
 					${studentInfo.telephone}

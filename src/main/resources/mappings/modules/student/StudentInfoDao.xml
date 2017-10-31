@@ -258,7 +258,8 @@
 	</insert>
 	
 	<update id="update">
-		UPDATE student_info SET
+		UPDATE student_info SET 	
+			userid = #{userid},
 			code = #{code},
 			name = #{name},
 			cname = #{cname},
