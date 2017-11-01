@@ -36,7 +36,7 @@
 		<div class="control-group">
 			<label class="control-label">学生编号：</label>
 			<div class="controls">
-				<form:input path="userid" htmlEscape="false" maxlength="20" class="input-xlarge required digits"/>
+				<form:input path="user.userid" htmlEscape="false" maxlength="20" class="input-xlarge required"/>
 				<span class="help-inline"><font color="red">*</font> </span>
 			</div>
 		</div>
@@ -47,15 +47,12 @@
 			</div>
 		</div>
 		<div class="control-group">
-			<label class="control-label">姓名：</label>
+			<label class="control-label">学籍改变：</label>
 			<div class="controls">
-				<form:input path="name" htmlEscape="false" maxlength="20" class="input-xlarge "/>
-			</div>
-		</div>
-		<div class="control-group">
-			<label class="control-label">班级：</label>
-			<div class="controls">
-				<form:input path="cname" htmlEscape="false" maxlength="20" class="input-xlarge "/>
+				<form:select path="statuschange" class="input-xlarge ">
+					<form:option value="" label=""/>
+					<form:options items="${fns:getDictList('student_type')}" itemLabel="label" itemValue="value" htmlEscape="false"/>
+				</form:select>
 			</div>
 		</div>
 		<div class="control-group">
@@ -67,7 +64,7 @@
 		<div class="control-group">
 			<label class="control-label">性别：</label>
 			<div class="controls">
-				<form:input path="sex" htmlEscape="false" maxlength="10" class="input-xlarge "/>
+				<form:radiobuttons path="sex" items="${fns:getDictList('sex')}" itemLabel="label" itemValue="value" htmlEscape="false" class=""/>
 			</div>
 		</div>
 		<div class="control-group">
@@ -87,7 +84,10 @@
 		<div class="control-group">
 			<label class="control-label">婚姻情况：</label>
 			<div class="controls">
-				<form:input path="married" htmlEscape="false" maxlength="10" class="input-xlarge "/>
+				<form:select path="married" class="input-xlarge ">
+					<form:option value="" label=""/>
+					<form:options items="${fns:getDictList('marry')}" itemLabel="label" itemValue="value" htmlEscape="false"/>
+				</form:select>
 			</div>
 		</div>
 		<div class="control-group">
@@ -111,7 +111,10 @@
 		<div class="control-group">
 			<label class="control-label">学历：</label>
 			<div class="controls">
-				<form:input path="schoolrecord" htmlEscape="false" maxlength="10" class="input-xlarge "/>
+				<form:select path="schoolrecord" class="input-xlarge ">
+					<form:option value="" label=""/>
+					<form:options items="${fns:getDictList('schoolrecord')}" itemLabel="label" itemValue="value" htmlEscape="false"/>
+				</form:select>
 			</div>
 		</div>
 		<div class="control-group">
@@ -160,6 +163,12 @@
 			<label class="control-label">家庭地址：</label>
 			<div class="controls">
 				<form:input path="homeaddress" htmlEscape="false" maxlength="50" class="input-xlarge "/>
+			</div>
+		</div>
+		<div class="control-group">
+			<label class="control-label">通讯地址：</label>
+			<div class="controls">
+				<form:input path="comminucationaddress" htmlEscape="false" maxlength="100" class="input-xlarge "/>
 			</div>
 		</div>
 		<div class="control-group">
@@ -287,7 +296,10 @@
 		<div class="control-group">
 			<label class="control-label">班级职务：</label>
 			<div class="controls">
-				<form:input path="innerheadship" htmlEscape="false" maxlength="20" class="input-xlarge "/>
+				<form:select path="innerheadship" class="input-xlarge ">
+					<form:option value="" label=""/>
+					<form:options items="${fns:getDictList('handship')}" itemLabel="label" itemValue="value" htmlEscape="false"/>
+				</form:select>
 			</div>
 		</div>
 		<div class="control-group">
@@ -325,7 +337,7 @@
 		<div class="control-group">
 			<label class="control-label">贷款情况：</label>
 			<div class="controls">
-				<form:input path="repayedcredit" htmlEscape="false" maxlength="1" class="input-xlarge required"/>
+				<form:radiobuttons path="repayedcredit" items="${fns:getDictList('repayed_credit')}" itemLabel="label" itemValue="value" htmlEscape="false" class="required"/>
 				<span class="help-inline"><font color="red">*</font> </span>
 			</div>
 		</div>
@@ -354,12 +366,6 @@
 			</div>
 		</div>
 		<div class="control-group">
-			<label class="control-label">备注：</label>
-			<div class="controls">
-				<form:input path="remarks" htmlEscape="false" maxlength="255" class="input-xlarge "/>
-			</div>
-		</div>
-		<div class="control-group">
 			<label class="control-label">班主任评价：</label>
 			<div class="controls">
 				<form:input path="teacherevaluation" htmlEscape="false" class="input-xlarge "/>
@@ -374,43 +380,55 @@
 		<div class="control-group">
 			<label class="control-label">第一次考试成绩：</label>
 			<div class="controls">
-				<form:input path="firstwritten" htmlEscape="false" class="input-xlarge  number"/>
+				<form:input path="firstwritten" htmlEscape="false" class="input-xlarge "/>
 			</div>
 		</div>
 		<div class="control-group">
 			<label class="control-label">第二次考试成绩：</label>
 			<div class="controls">
-				<form:input path="secondwritten" htmlEscape="false" class="input-xlarge  number"/>
+				<form:input path="secondwritten" htmlEscape="false" class="input-xlarge "/>
 			</div>
 		</div>
 		<div class="control-group">
 			<label class="control-label">第三次考试成绩：</label>
 			<div class="controls">
-				<form:input path="thirdwritten" htmlEscape="false" class="input-xlarge  number"/>
+				<form:input path="thirdwritten" htmlEscape="false" class="input-xlarge "/>
 			</div>
 		</div>
 		<div class="control-group">
 			<label class="control-label">SCJP考试成绩：</label>
 			<div class="controls">
-				<form:input path="scjp" htmlEscape="false" class="input-xlarge  number"/>
+				<form:input path="scjp" htmlEscape="false" class="input-xlarge "/>
 			</div>
 		</div>
 		<div class="control-group">
 			<label class="control-label">第一次项目考核成绩：</label>
 			<div class="controls">
-				<form:input path="firstpoll" htmlEscape="false" class="input-xlarge  number"/>
+				<form:input path="firstpoll" htmlEscape="false" class="input-xlarge "/>
 			</div>
 		</div>
 		<div class="control-group">
 			<label class="control-label">第二次项目考核成绩：</label>
 			<div class="controls">
-				<form:input path="secondpoll" htmlEscape="false" class="input-xlarge  number"/>
+				<form:input path="secondpoll" htmlEscape="false" class="input-xlarge "/>
 			</div>
 		</div>
 		<div class="control-group">
 			<label class="control-label">第三次项目考核成绩：</label>
 			<div class="controls">
-				<form:input path="thirdpoll" htmlEscape="false" class="input-xlarge  number"/>
+				<form:input path="thirdpoll" htmlEscape="false" class="input-xlarge "/>
+			</div>
+		</div>
+		<div class="control-group">
+			<label class="control-label">教室编号：</label>
+			<div class="controls">
+				<form:input path="classes.id" htmlEscape="false" maxlength="20" class="input-xlarge "/>
+			</div>
+		</div>
+		<div class="control-group">
+			<label class="control-label">备注信息：</label>
+			<div class="controls">
+				<form:textarea path="remarks" htmlEscape="false" rows="4" maxlength="255" class="input-xxlarge "/>
 			</div>
 		</div>
 		<div class="form-actions">

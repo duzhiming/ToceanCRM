@@ -16,7 +16,7 @@ import com.thinkgem.jeesite.modules.student.dao.StudentInfoDao;
 /**
  * 学生管理Service
  * @author duzhiming
- * @version 2017-10-31
+ * @version 2017-11-01
  */
 @Service
 @Transactional(readOnly = true)

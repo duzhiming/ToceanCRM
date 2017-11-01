@@ -10,7 +10,7 @@ import com.thinkgem.jeesite.modules.student.entity.StudentInfo;
 /**
  * 学生管理DAO接口
  * @author duzhiming
- * @version 2017-10-31
+ * @version 2017-11-01
  */
 @MyBatisDao
 public interface StudentInfoDao extends CrudDao<StudentInfo> {

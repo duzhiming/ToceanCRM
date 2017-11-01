@@ -13,6 +13,7 @@ E:\toceanCRM项目\toceanCRM\src\main\java\com\thinkgem\jeesite\modules\act\enti
 E:\toceanCRM项目\toceanCRM\src\main\java\com\thinkgem\jeesite\common\supcan\treelist\TreeList.java
 E:\toceanCRM项目\toceanCRM\src\main\java\com\thinkgem\jeesite\modules\sys\dao\LogDao.java
 E:\toceanCRM项目\toceanCRM\src\main\java\com\thinkgem\jeesite\modules\act\service\ActTaskService.java
+E:\toceanCRM项目\toceanCRM\src\main\java\com\thinkgem\jeesite\modules\student\dao\CrmClassesDao.java
 E:\toceanCRM项目\toceanCRM\src\main\java\com\thinkgem\jeesite\modules\cms\service\CommentService.java
 E:\toceanCRM项目\toceanCRM\src\main\java\com\thinkgem\jeesite\modules\oa\service\TestAuditService.java
 E:\toceanCRM项目\toceanCRM\src\main\java\com\thinkgem\jeesite\test\web\TestTreeController.java
@@ -30,6 +31,7 @@ E:\toceanCRM项目\toceanCRM\src\main\java\com\thinkgem\jeesite\test\service\Tes
 E:\toceanCRM项目\toceanCRM\src\main\java\com\thinkgem\jeesite\common\persistence\annotation\MyBatisDao.java
 E:\toceanCRM项目\toceanCRM\src\main\java\com\thinkgem\jeesite\modules\sys\interceptor\MobileInterceptor.java
 E:\toceanCRM项目\toceanCRM\src\main\java\com\thinkgem\jeesite\common\utils\DateUtils.java
+E:\toceanCRM项目\toceanCRM\src\main\java\com\thinkgem\jeesite\modules\student\web\CrmClassesController.java
 E:\toceanCRM项目\toceanCRM\src\main\java\org\mybatis\spring\SqlSessionFactoryBean.java
 E:\toceanCRM项目\toceanCRM\src\main\java\com\thinkgem\jeesite\common\supcan\freeform\FreeForm.java
 E:\toceanCRM项目\toceanCRM\src\main\java\com\thinkgem\jeesite\modules\book\entity\Product.java
@@ -45,6 +47,7 @@ E:\toceanCRM项目\toceanCRM\src\main\java\com\thinkgem\jeesite\modules\oa\web\O
 E:\toceanCRM项目\toceanCRM\src\main\java\com\thinkgem\jeesite\common\utils\OrderProperties.java
 E:\toceanCRM项目\toceanCRM\src\main\java\com\thinkgem\jeesite\modules\gen\entity\GenTable.java
 E:\toceanCRM项目\toceanCRM\src\main\java\com\thinkgem\jeesite\common\mapper\adapters\MapConvertor.java
+E:\toceanCRM项目\toceanCRM\src\main\java\com\thinkgem\jeesite\modules\student\service\CrmClassesService.java
 E:\toceanCRM项目\toceanCRM\src\main\java\com\thinkgem\jeesite\modules\act\service\ext\ActGroupEntityService.java
 E:\toceanCRM项目\toceanCRM\src\main\java\com\thinkgem\jeesite\modules\act\rest\servlet\JsonpCallbackFilter.java
 E:\toceanCRM项目\toceanCRM\src\main\java\com\thinkgem\jeesite\modules\gen\web\GenTemplateController.java
@@ -53,6 +56,7 @@ E:\toceanCRM项目\toceanCRM\src\main\java\com\thinkgem\jeesite\common\web\BaseC
 E:\toceanCRM项目\toceanCRM\src\main\java\com\thinkgem\jeesite\modules\act\service\ActProcessService.java
 E:\toceanCRM项目\toceanCRM\src\main\java\com\thinkgem\jeesite\modules\sys\listener\WebContextListener.java
 E:\toceanCRM项目\toceanCRM\src\main\java\com\thinkgem\jeesite\common\test\SpringTransactionalContextTests.java
+E:\toceanCRM项目\toceanCRM\src\main\java\com\thinkgem\jeesite\modules\student\dao\StudentIntroduceDao.java
 E:\toceanCRM项目\toceanCRM\src\main\java\com\thinkgem\jeesite\common\persistence\ActEntity.java
 E:\toceanCRM项目\toceanCRM\src\main\java\com\thinkgem\jeesite\modules\act\dao\ActDao.java
 E:\toceanCRM项目\toceanCRM\src\main\java\com\thinkgem\jeesite\common\utils\UserAgentUtils.java
@@ -65,6 +69,7 @@ E:\toceanCRM项目\toceanCRM\src\main\java\com\thinkgem\jeesite\common\mapper\Be
 E:\toceanCRM项目\toceanCRM\src\main\java\com\thinkgem\jeesite\modules\act\service\creator\RuntimeActivityCreatorSupport.java
 E:\toceanCRM项目\toceanCRM\src\main\java\com\thinkgem\jeesite\common\persistence\CrudDao.java
 E:\toceanCRM项目\toceanCRM\src\main\java\com\thinkgem\jeesite\common\persistence\dialect\db\H2Dialect.java
+E:\toceanCRM项目\toceanCRM\src\main\java\com\thinkgem\jeesite\modules\student\entity\StudentIntroduce.java
 E:\toceanCRM项目\toceanCRM\src\main\java\com\thinkgem\jeesite\modules\act\web\ActProcessController.java
 E:\toceanCRM项目\toceanCRM\src\main\java\com\thinkgem\jeesite\modules\gen\entity\GenConfig.java
 E:\toceanCRM项目\toceanCRM\src\main\java\com\thinkgem\jeesite\common\utils\ImageGeo.java
@@ -125,6 +130,7 @@ E:\toceanCRM项目\toceanCRM\src\main\java\com\thinkgem\jeesite\common\supcan\tr
 E:\toceanCRM项目\toceanCRM\src\main\java\com\thinkgem\jeesite\common\persistence\dialect\db\OracleDialect.java
 E:\toceanCRM项目\toceanCRM\src\main\java\com\thinkgem\jeesite\common\utils\EhCacheUtils.java
 E:\toceanCRM项目\toceanCRM\src\main\java\com\thinkgem\jeesite\modules\sys\entity\Log.java
+E:\toceanCRM项目\toceanCRM\src\main\java\com\thinkgem\jeesite\modules\student\service\CrmUserService.java
 E:\toceanCRM项目\toceanCRM\src\main\java\com\thinkgem\jeesite\test\web\TestDataController.java
 E:\toceanCRM项目\toceanCRM\src\main\java\com\thinkgem\jeesite\modules\gen\dao\GenSchemeDao.java
 E:\toceanCRM项目\toceanCRM\src\main\java\com\thinkgem\jeesite\modules\oa\service\OaNotifyService.java
@@ -168,6 +174,7 @@ E:\toceanCRM项目\toceanCRM\src\main\java\com\thinkgem\jeesite\modules\gen\enti
 E:\toceanCRM项目\toceanCRM\src\main\java\com\thinkgem\jeesite\common\persistence\Parameter.java
 E:\toceanCRM项目\toceanCRM\src\main\java\com\thinkgem\jeesite\common\xstream\DateTimeConverter.java
 E:\toceanCRM项目\toceanCRM\src\main\java\com\thinkgem\jeesite\modules\gen\dao\GenTemplateDao.java
+E:\toceanCRM项目\toceanCRM\src\main\java\com\thinkgem\jeesite\modules\student\service\StudentIntroduceService.java
 E:\toceanCRM项目\toceanCRM\src\main\java\com\thinkgem\jeesite\common\servlet\UserfilesDownloadServlet.java
 E:\toceanCRM项目\toceanCRM\src\main\java\com\thinkgem\jeesite\modules\student\dao\StuPraiseDao.java
 E:\toceanCRM项目\toceanCRM\src\main\java\com\thinkgem\jeesite\modules\book\service\ProductService.java
@@ -195,6 +202,7 @@ E:\toceanCRM项目\toceanCRM\src\main\java\com\thinkgem\jeesite\modules\cms\serv
 E:\toceanCRM项目\toceanCRM\src\main\java\com\thinkgem\jeesite\common\supcan\common\properties\Properties.java
 E:\toceanCRM项目\toceanCRM\src\main\java\com\thinkgem\jeesite\modules\cms\service\CategoryService.java
 E:\toceanCRM项目\toceanCRM\src\main\java\com\thinkgem\jeesite\modules\cms\service\LinkService.java
+E:\toceanCRM项目\toceanCRM\src\main\java\com\thinkgem\jeesite\modules\student\dao\CrmUserDao.java
 E:\toceanCRM项目\toceanCRM\src\main\java\com\thinkgem\jeesite\modules\sys\utils\LogUtils.java
 E:\toceanCRM项目\toceanCRM\src\main\java\com\thinkgem\jeesite\modules\act\service\ext\ActUserEntityServiceFactory.java
 E:\toceanCRM项目\toceanCRM\src\main\java\com\thinkgem\jeesite\test\entity\TestData.java
@@ -207,6 +215,7 @@ E:\toceanCRM项目\toceanCRM\src\main\java\com\thinkgem\jeesite\modules\cms\dao\
 E:\toceanCRM项目\toceanCRM\src\main\java\com\thinkgem\jeesite\modules\act\service\creator\RuntimeActivityCreator.java
 E:\toceanCRM项目\toceanCRM\src\main\java\com\thinkgem\jeesite\modules\cms\service\FileTplService.java
 E:\toceanCRM项目\toceanCRM\src\main\java\com\thinkgem\jeesite\common\supcan\annotation\common\fonts\SupFont.java
+E:\toceanCRM项目\toceanCRM\src\main\java\com\thinkgem\jeesite\modules\student\web\StudentIntroduceController.java
 E:\toceanCRM项目\toceanCRM\src\main\java\com\thinkgem\jeesite\common\persistence\interceptor\BaseInterceptor.java
 E:\toceanCRM项目\toceanCRM\src\main\java\com\thinkgem\jeesite\modules\oa\entity\OaNotifyRecord.java
 E:\toceanCRM项目\toceanCRM\src\main\java\com\thinkgem\jeesite\modules\cms\web\front\WeixinController.java
@@ -224,6 +233,7 @@ E:\toceanCRM项目\toceanCRM\src\main\java\com\thinkgem\jeesite\modules\test\ent
 E:\toceanCRM项目\toceanCRM\src\main\java\com\thinkgem\jeesite\modules\act\web\ActTaskController.java
 E:\toceanCRM项目\toceanCRM\src\main\java\com\thinkgem\jeesite\modules\act\rest\diagram\services\ProcessInstanceDiagramLayoutResource.java
 E:\toceanCRM项目\toceanCRM\src\main\java\com\thinkgem\jeesite\common\utils\CacheUtils.java
+E:\toceanCRM项目\toceanCRM\src\main\java\com\thinkgem\jeesite\modules\student\web\CrmUserController.java
 E:\toceanCRM项目\toceanCRM\src\main\java\com\thinkgem\jeesite\modules\sys\web\TagController.java
 E:\toceanCRM项目\toceanCRM\src\main\java\com\thinkgem\jeesite\modules\cms\dao\SiteDao.java
 E:\toceanCRM项目\toceanCRM\src\main\java\com\thinkgem\jeesite\modules\sys\dao\MenuDao.java
@@ -231,6 +241,7 @@ E:\toceanCRM项目\toceanCRM\src\main\java\com\thinkgem\jeesite\modules\act\serv
 E:\toceanCRM项目\toceanCRM\src\main\java\com\thinkgem\jeesite\test\service\TestDataMainService.java
 E:\toceanCRM项目\toceanCRM\src\main\java\com\thinkgem\jeesite\common\utils\SpringContextHolder.java
 E:\toceanCRM项目\toceanCRM\src\main\java\com\thinkgem\jeesite\common\persistence\dialect\db\HSQLDialect.java
+E:\toceanCRM项目\toceanCRM\src\main\java\com\thinkgem\jeesite\modules\student\entity\CrmClasses.java
 E:\toceanCRM项目\toceanCRM\src\main\java\com\thinkgem\jeesite\modules\gen\entity\GenTemplate.java
 E:\toceanCRM项目\toceanCRM\src\main\java\com\thinkgem\jeesite\modules\act\utils\ProcessDefUtils.java
 E:\toceanCRM项目\toceanCRM\src\main\java\com\thinkgem\jeesite\modules\student\web\StudentInfoController.java
@@ -293,6 +304,7 @@ E:\toceanCRM项目\toceanCRM\src\main\java\com\thinkgem\jeesite\common\utils\Thr
 E:\toceanCRM项目\toceanCRM\src\main\java\com\thinkgem\jeesite\modules\sys\service\LogService.java
 E:\toceanCRM项目\toceanCRM\src\main\java\com\thinkgem\jeesite\common\utils\excel\fieldtype\OfficeType.java
 E:\toceanCRM项目\toceanCRM\src\main\java\com\thinkgem\jeesite\common\security\shiro\session\SessionManager.java
+E:\toceanCRM项目\toceanCRM\src\main\java\com\thinkgem\jeesite\modules\student\entity\CrmUser.java
 E:\toceanCRM项目\toceanCRM\src\main\java\com\thinkgem\jeesite\common\persistence\interceptor\PaginationInterceptor.java
 E:\toceanCRM项目\toceanCRM\src\main\java\com\thinkgem\jeesite\common\persistence\Page.java
 E:\toceanCRM项目\toceanCRM\src\main\java\com\thinkgem\jeesite\modules\sys\entity\User.java

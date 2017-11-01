@@ -1,0 +1,8 @@
+<component name="ArtifactManager">
+  <artifact type="war" name="toceanCRM:war">
+    <output-path>$PROJECT_DIR$/target</output-path>
+    <root id="archive" name="toceanCRM.war">
+      <element id="artifact" artifact-name="toceanCRM:war exploded" />
+    </root>
+  </artifact>
+</component>

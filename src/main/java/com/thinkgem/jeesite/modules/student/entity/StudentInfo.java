@@ -13,15 +13,14 @@ import com.thinkgem.jeesite.common.persistence.DataEntity;
 /**
  * 学生管理Entity
  * @author duzhiming
- * @version 2017-10-31
+ * @version 2017-11-01
  */
 public class StudentInfo extends DataEntity<StudentInfo> {
 	
 	private static final long serialVersionUID = 1L;
-	private Long userid;		// 学生编号
+	private CrmUser user;		// 学生编号
 	private String code;		// 学号
-	private String name;		// 姓名
-	private String cname;		// 班级
+	private String statuschange;		// 学籍改变
 	private String studenttype;		// 学生类型
 	private String sex;		// 性别
 	private String birthplace;		// 出生地
@@ -31,7 +30,7 @@ public class StudentInfo extends DataEntity<StudentInfo> {
 	private String department;		// 部门
 	private String collegemajor;		// 专业
 	private String schoolrecord;		// 学历
-	private String graduatedate;		// 毕业学校
+	private String graduatedate;		// 毕业时间
 	private String telephone;		// 入学联系电话
 	private String gtelephone;		// 毕业联系电话
 	private String email;		// email
@@ -39,6 +38,7 @@ public class StudentInfo extends DataEntity<StudentInfo> {
 	private String msn;		// msn
 	private String homephone;		// 家庭电话
 	private String homeaddress;		// 家庭地址
+	private String comminucationaddress;		// 通讯地址
 	private String credentialno;		// 出勤号
 	private String guardian;		// 监护人
 	private String guardianphone;		// 监护人联系电话
@@ -70,16 +70,16 @@ public class StudentInfo extends DataEntity<StudentInfo> {
 	private String company;		// 公司
 	private Integer salary;		// 薪水
 	private String returnvist;		// 回访记录
-	private String remarks;		// 备注
 	private String teacherevaluation;		// 班主任评价
 	private String pmevaluation;		// 项目经理评价
-	private Double firstwritten;		// 第一次考试成绩
-	private Double secondwritten;		// 第二次考试成绩
-	private Double thirdwritten;		// 第三次考试成绩
-	private Double scjp;		// SCJP考试成绩
-	private Double firstpoll;		// 第一次项目考核成绩
-	private Double secondpoll;		// 第二次项目考核成绩
-	private Double thirdpoll;		// 第三次项目考核成绩
+	private String firstwritten;		// 第一次考试成绩
+	private String secondwritten;		// 第二次考试成绩
+	private String thirdwritten;		// 第三次考试成绩
+	private String scjp;		// SCJP考试成绩
+	private String firstpoll;		// 第一次项目考核成绩
+	private String secondpoll;		// 第二次项目考核成绩
+	private String thirdpoll;		// 第三次项目考核成绩
+	private CrmClasses classes;		// classes_id
 	
 	public StudentInfo() {
 		super();
@@ -90,12 +90,12 @@ public class StudentInfo extends DataEntity<StudentInfo> {
 	}
 
 	@NotNull(message="学生编号不能为空")
-	public Long getUserid() {
-		return userid;
+	public CrmUser getUser() {
+		return user;
 	}
 
-	public void setUserid(Long userid) {
-		this.userid = userid;
+	public void setUser(CrmUser user) {
+		this.user = user;
 	}
 	
 	@Length(min=0, max=20, message="学号长度必须介于 0 和 20 之间")
@@ -107,22 +107,13 @@ public class StudentInfo extends DataEntity<StudentInfo> {
 		this.code = code;
 	}
 	
-	@Length(min=0, max=20, message="姓名长度必须介于 0 和 20 之间")
-	public String getName() {
-		return name;
+	@Length(min=0, max=500, message="学籍改变长度必须介于 0 和 500 之间")
+	public String getStatuschange() {
+		return statuschange;
 	}
 
-	public void setName(String name) {
-		this.name = name;
-	}
-	
-	@Length(min=0, max=20, message="班级长度必须介于 0 和 20 之间")
-	public String getCname() {
-		return cname;
-	}
-
-	public void setCname(String cname) {
-		this.cname = cname;
+	public void setStatuschange(String statuschange) {
+		this.statuschange = statuschange;
 	}
 	
 	@Length(min=0, max=20, message="学生类型长度必须介于 0 和 20 之间")
@@ -206,7 +197,7 @@ public class StudentInfo extends DataEntity<StudentInfo> {
 		this.schoolrecord = schoolrecord;
 	}
 	
-	@Length(min=0, max=10, message="毕业学校长度必须介于 0 和 10 之间")
+	@Length(min=0, max=10, message="毕业时间长度必须介于 0 和 10 之间")
 	public String getGraduatedate() {
 		return graduatedate;
 	}
@@ -276,6 +267,15 @@ public class StudentInfo extends DataEntity<StudentInfo> {
 
 	public void setHomeaddress(String homeaddress) {
 		this.homeaddress = homeaddress;
+	}
+	
+	@Length(min=0, max=100, message="通讯地址长度必须介于 0 和 100 之间")
+	public String getComminucationaddress() {
+		return comminucationaddress;
+	}
+
+	public void setComminucationaddress(String comminucationaddress) {
+		this.comminucationaddress = comminucationaddress;
 	}
 	
 	@Length(min=0, max=50, message="出勤号长度必须介于 0 和 50 之间")
@@ -509,7 +509,7 @@ public class StudentInfo extends DataEntity<StudentInfo> {
 		this.resumefilename = resumefilename;
 	}
 	
-	@Length(min=0, max=1, message="贷款情况长度必须介于 0 和 1 之间")
+	@Length(min=1, max=1, message="贷款情况长度必须介于 1 和 1 之间")
 	public String getRepayedcredit() {
 		return repayedcredit;
 	}
@@ -551,15 +551,6 @@ public class StudentInfo extends DataEntity<StudentInfo> {
 		this.returnvist = returnvist;
 	}
 	
-	@Length(min=0, max=255, message="备注长度必须介于 0 和 255 之间")
-	public String getRemarks() {
-		return remarks;
-	}
-
-	public void setRemarks(String remarks) {
-		this.remarks = remarks;
-	}
-
 	public String getTeacherevaluation() {
 		return teacherevaluation;
 	}
@@ -576,61 +567,68 @@ public class StudentInfo extends DataEntity<StudentInfo> {
 		this.pmevaluation = pmevaluation;
 	}
 	
-	public Double getFirstwritten() {
+	public String getFirstwritten() {
 		return firstwritten;
 	}
 
-	public void setFirstwritten(Double firstwritten) {
+	public void setFirstwritten(String firstwritten) {
 		this.firstwritten = firstwritten;
 	}
 	
-	public Double getSecondwritten() {
+	public String getSecondwritten() {
 		return secondwritten;
 	}
 
-	public void setSecondwritten(Double secondwritten) {
+	public void setSecondwritten(String secondwritten) {
 		this.secondwritten = secondwritten;
 	}
 	
-	public Double getThirdwritten() {
+	public String getThirdwritten() {
 		return thirdwritten;
 	}
 
-	public void setThirdwritten(Double thirdwritten) {
+	public void setThirdwritten(String thirdwritten) {
 		this.thirdwritten = thirdwritten;
 	}
 	
-	public Double getScjp() {
+	public String getScjp() {
 		return scjp;
 	}
 
-	public void setScjp(Double scjp) {
+	public void setScjp(String scjp) {
 		this.scjp = scjp;
 	}
 	
-	public Double getFirstpoll() {
+	public String getFirstpoll() {
 		return firstpoll;
 	}
 
-	public void setFirstpoll(Double firstpoll) {
+	public void setFirstpoll(String firstpoll) {
 		this.firstpoll = firstpoll;
 	}
 	
-	public Double getSecondpoll() {
+	public String getSecondpoll() {
 		return secondpoll;
 	}
 
-	public void setSecondpoll(Double secondpoll) {
+	public void setSecondpoll(String secondpoll) {
 		this.secondpoll = secondpoll;
 	}
 	
-	public Double getThirdpoll() {
+	public String getThirdpoll() {
 		return thirdpoll;
 	}
 
-	public void setThirdpoll(Double thirdpoll) {
+	public void setThirdpoll(String thirdpoll) {
 		this.thirdpoll = thirdpoll;
 	}
+	
+	public CrmClasses getClasses() {
+		return classes;
+	}
 
+	public void setClasses(CrmClasses classes) {
+		this.classes = classes;
+	}
 	
 }
