@@ -70,7 +70,7 @@ public class StudentInfo extends DataEntity<StudentInfo> {
 	private String company;		// 公司
 	private Integer salary;		// 薪水
 	private String returnvist;		// 回访记录
-	private String other;		// 备注
+	private String remarks;		// 备注
 	private String teacherevaluation;		// 班主任评价
 	private String pmevaluation;		// 项目经理评价
 	private Double firstwritten;		// 第一次考试成绩
@@ -552,12 +552,12 @@ public class StudentInfo extends DataEntity<StudentInfo> {
 	}
 	
 	@Length(min=0, max=255, message="备注长度必须介于 0 和 255 之间")
-	public String getOther() {
-		return other;
+	public String getRemarks() {
+		return remarks;
 	}
 
-	public void setOther(String other) {
-		this.other = other;
+	public void setRemarks(String remarks) {
+		this.remarks = remarks;
 	}
 
 	public String getTeacherevaluation() {

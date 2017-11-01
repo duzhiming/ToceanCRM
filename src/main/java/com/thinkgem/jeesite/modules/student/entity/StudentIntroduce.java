@@ -17,10 +17,10 @@ import com.thinkgem.jeesite.common.persistence.DataEntity;
 public class StudentIntroduce extends DataEntity<StudentIntroduce> {
 	
 	private static final long serialVersionUID = 1L;
-	private String student;		// 学员
+	private String stuname;		// 学员
 	private Date introdate;		// 介绍日期
-	private String empname;		// 介绍人编号
-	private Custom student;		// 学员编号
+	private String empname;		// 介绍人
+	private StudentInfo student;		// 学员编号
 	
 	public StudentIntroduce() {
 		super();
@@ -31,12 +31,12 @@ public class StudentIntroduce extends DataEntity<StudentIntroduce> {
 	}
 
 	@Length(min=0, max=10, message="学员长度必须介于 0 和 10 之间")
-	public String getStudent() {
-		return student;
+	public String getStuname() {
+		return stuname;
 	}
 
-	public void setStudent(String student) {
-		this.student = student;
+	public void setStuname(String stuname) {
+		this.stuname = stuname;
 	}
 	
 	@JsonFormat(pattern = "yyyy-MM-dd HH:mm:ss")
@@ -48,7 +48,7 @@ public class StudentIntroduce extends DataEntity<StudentIntroduce> {
 		this.introdate = introdate;
 	}
 	
-	@Length(min=0, max=20, message="介绍人编号长度必须介于 0 和 20 之间")
+	@Length(min=0, max=20, message="介绍人长度必须介于 0 和 20 之间")
 	public String getEmpname() {
 		return empname;
 	}
@@ -57,11 +57,11 @@ public class StudentIntroduce extends DataEntity<StudentIntroduce> {
 		this.empname = empname;
 	}
 	
-	public Custom getStudent() {
+	public StudentInfo getStudent() {
 		return student;
 	}
 
-	public void setStudent(Custom student) {
+	public void setStudent(StudentInfo student) {
 		this.student = student;
 	}
 	

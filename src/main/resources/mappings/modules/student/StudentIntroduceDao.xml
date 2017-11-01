@@ -4,13 +4,16 @@
     
 	<sql id="studentIntroduceColumns">
 		a.id AS "id",
-		a.student AS "student",
+		a.stuname AS "stuname",
 		a.introdate AS "introdate",
 		a.empname AS "empname",
-		a.student_id AS "student"
+		a.student_id AS "student.id",
+		u1.name AS "student.name",
+		u1.classes AS "student.classes"
 	</sql>
 	
 	<sql id="studentIntroduceJoins">
+		LEFT JOIN student_info u1 ON u1.userid = a.student_id
 	</sql>
     
 	<select id="get" resultType="StudentIntroduce">
@@ -28,8 +31,8 @@
 		<include refid="studentIntroduceJoins"/>
 		<where>
 			
-			<if test="student != null and student != ''">
-				AND a.student = #{student}
+			<if test="stuname != null and stuname != ''">
+				AND a.stuname = #{stuname}
 			</if>
 			<if test="introdate != null and introdate != ''">
 				AND a.introdate = #{introdate}
@@ -64,25 +67,25 @@
 	<insert id="insert">
 		INSERT INTO student_introduce(
 			id,
-			student,
+			stuname,
 			introdate,
 			empname,
 			student_id
 		) VALUES (
 			#{id},
-			#{student},
+			#{stuname},
 			#{introdate},
 			#{empname},
-			#{student}
+			#{student.id}
 		)
 	</insert>
 	
 	<update id="update">
 		UPDATE student_introduce SET 	
-			student = #{student},
+			stuname = #{stuname},
 			introdate = #{introdate},
 			empname = #{empname},
-			student_id = #{student}
+			student_id = #{student.id}
 		WHERE id = #{id}
 	</update>
 	

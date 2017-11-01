@@ -36,7 +36,7 @@
 		<div class="control-group">
 			<label class="control-label">学员：</label>
 			<div class="controls">
-				<form:input path="student" htmlEscape="false" maxlength="10" class="input-xlarge "/>
+				<form:input path="stuname" htmlEscape="false" maxlength="10" class="input-xlarge "/>
 			</div>
 		</div>
 		<div class="control-group">
@@ -48,7 +48,7 @@
 			</div>
 		</div>
 		<div class="control-group">
-			<label class="control-label">介绍人编号：</label>
+			<label class="control-label">介绍人：</label>
 			<div class="controls">
 				<form:input path="empname" htmlEscape="false" maxlength="20" class="input-xlarge "/>
 			</div>

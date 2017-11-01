@@ -356,7 +356,7 @@
 		<div class="control-group">
 			<label class="control-label">备注：</label>
 			<div class="controls">
-				<form:input path="other" htmlEscape="false" maxlength="255" class="input-xlarge "/>
+				<form:input path="remarks" htmlEscape="false" maxlength="255" class="input-xlarge "/>
 			</div>
 		</div>
 		<div class="control-group">

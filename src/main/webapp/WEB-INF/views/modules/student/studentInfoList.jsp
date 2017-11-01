@@ -60,10 +60,10 @@
 					${studentInfo.code}
 				</td>
 				<td>
-					${studentInfo.name}
+
 				</td>
 				<td>
-					${studentInfo.cname}
+
 				</td>
 				<td>
 					${studentInfo.sex}

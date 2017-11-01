@@ -26,7 +26,7 @@
 		<input id="pageSize" name="pageSize" type="hidden" value="${page.pageSize}"/>
 		<ul class="ul-form">
 			<li><label>学员：</label>
-				<form:input path="student" htmlEscape="false" maxlength="10" class="input-medium"/>
+				<form:input path="stuname" htmlEscape="false" maxlength="10" class="input-medium"/>
 			</li>
 			<li><label>介绍日期：</label>
 				<input name="introdate" type="text" readonly="readonly" maxlength="20" class="input-medium Wdate"
@@ -41,20 +41,32 @@
 	<table id="contentTable" class="table table-striped table-bordered table-condensed">
 		<thead>
 			<tr>
+				<th>序号</th>
 				<th>学员</th>
 				<th>介绍日期</th>
-				<th>介绍人编号</th>
+				<th>介绍学员</th>
+				<th>介绍学员班级</th>
+				<th>介绍人</th>
 				<shiro:hasPermission name="student:studentIntroduce:edit"><th>操作</th></shiro:hasPermission>
 			</tr>
 		</thead>
 		<tbody>
 		<c:forEach items="${page.list}" var="studentIntroduce">
 			<tr>
+				<td>
+						1
+				</td>
 				<td><a href="${ctx}/student/studentIntroduce/form?id=${studentIntroduce.id}">
-					${studentIntroduce.student}
+					${studentIntroduce.stuname}
 				</a></td>
 				<td>
-					<fmt:formatDate value="${studentIntroduce.introdate}" pattern="yyyy-MM-dd HH:mm:ss"/>
+					<fmt:formatDate value="${studentIntroduce.introdate}" pattern="yyyy-MM-dd"/>
+				</td>
+				<td>
+						${studentIntroduce.student.name}
+				</td>
+				<td>
+						${studentIntroduce.student.classes}
 				</td>
 				<td>
 					${studentIntroduce.empname}
