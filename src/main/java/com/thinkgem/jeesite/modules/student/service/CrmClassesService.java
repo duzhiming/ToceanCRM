@@ -16,7 +16,7 @@ import com.thinkgem.jeesite.modules.student.dao.CrmClassesDao;
 /**
  * 课室信息Service
  * @author duzhiming
- * @version 2017-11-01
+ * @version 2017-11-02
  */
 @Service
 @Transactional(readOnly = true)

@@ -36,8 +36,14 @@
 		<div class="control-group">
 			<label class="control-label">学生编号：</label>
 			<div class="controls">
-				<form:input path="user.userid" htmlEscape="false" maxlength="20" class="input-xlarge required"/>
+				<form:input path="userid" htmlEscape="false" maxlength="20" class="input-xlarge required digits"/>
 				<span class="help-inline"><font color="red">*</font> </span>
+			</div>
+		</div>
+		<div class="control-group">
+			<label class="control-label">用户姓名：</label>
+			<div class="controls">
+				<form:input path="name" htmlEscape="false" maxlength="100" class="input-xlarge "/>
 			</div>
 		</div>
 		<div class="control-group">
@@ -49,16 +55,16 @@
 		<div class="control-group">
 			<label class="control-label">学籍改变：</label>
 			<div class="controls">
-				<form:select path="statuschange" class="input-xlarge ">
-					<form:option value="" label=""/>
-					<form:options items="${fns:getDictList('student_type')}" itemLabel="label" itemValue="value" htmlEscape="false"/>
-				</form:select>
+				<form:input path="statuschange" htmlEscape="false" maxlength="500" class="input-xlarge "/>
 			</div>
 		</div>
 		<div class="control-group">
 			<label class="control-label">学生类型：</label>
 			<div class="controls">
-				<form:input path="studenttype" htmlEscape="false" maxlength="20" class="input-xlarge "/>
+				<form:select path="studenttype" class="input-xlarge ">
+					<form:option value="" label=""/>
+					<form:options items="${fns:getDictList('student_type')}" itemLabel="label" itemValue="value" htmlEscape="false"/>
+				</form:select>
 			</div>
 		</div>
 		<div class="control-group">
@@ -335,7 +341,7 @@
 			</div>
 		</div>
 		<div class="control-group">
-			<label class="control-label">贷款情况：</label>
+			<label class="control-label">是否还清贷款：</label>
 			<div class="controls">
 				<form:radiobuttons path="repayedcredit" items="${fns:getDictList('repayed_credit')}" itemLabel="label" itemValue="value" htmlEscape="false" class="required"/>
 				<span class="help-inline"><font color="red">*</font> </span>
@@ -380,43 +386,43 @@
 		<div class="control-group">
 			<label class="control-label">第一次考试成绩：</label>
 			<div class="controls">
-				<form:input path="firstwritten" htmlEscape="false" class="input-xlarge "/>
+				<form:input path="firstwritten" htmlEscape="false" class="input-xlarge  number"/>
 			</div>
 		</div>
 		<div class="control-group">
 			<label class="control-label">第二次考试成绩：</label>
 			<div class="controls">
-				<form:input path="secondwritten" htmlEscape="false" class="input-xlarge "/>
+				<form:input path="secondwritten" htmlEscape="false" class="input-xlarge  number"/>
 			</div>
 		</div>
 		<div class="control-group">
 			<label class="control-label">第三次考试成绩：</label>
 			<div class="controls">
-				<form:input path="thirdwritten" htmlEscape="false" class="input-xlarge "/>
+				<form:input path="thirdwritten" htmlEscape="false" class="input-xlarge  number"/>
 			</div>
 		</div>
 		<div class="control-group">
 			<label class="control-label">SCJP考试成绩：</label>
 			<div class="controls">
-				<form:input path="scjp" htmlEscape="false" class="input-xlarge "/>
+				<form:input path="scjp" htmlEscape="false" class="input-xlarge  number"/>
 			</div>
 		</div>
 		<div class="control-group">
 			<label class="control-label">第一次项目考核成绩：</label>
 			<div class="controls">
-				<form:input path="firstpoll" htmlEscape="false" class="input-xlarge "/>
+				<form:input path="firstpoll" htmlEscape="false" class="input-xlarge  number"/>
 			</div>
 		</div>
 		<div class="control-group">
 			<label class="control-label">第二次项目考核成绩：</label>
 			<div class="controls">
-				<form:input path="secondpoll" htmlEscape="false" class="input-xlarge "/>
+				<form:input path="secondpoll" htmlEscape="false" class="input-xlarge  number"/>
 			</div>
 		</div>
 		<div class="control-group">
 			<label class="control-label">第三次项目考核成绩：</label>
 			<div class="controls">
-				<form:input path="thirdpoll" htmlEscape="false" class="input-xlarge "/>
+				<form:input path="thirdpoll" htmlEscape="false" class="input-xlarge  number"/>
 			</div>
 		</div>
 		<div class="control-group">

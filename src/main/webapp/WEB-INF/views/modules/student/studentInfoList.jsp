@@ -25,8 +25,8 @@
 		<input id="pageNo" name="pageNo" type="hidden" value="${page.pageNo}"/>
 		<input id="pageSize" name="pageSize" type="hidden" value="${page.pageSize}"/>
 		<ul class="ul-form">
-			<li><label>学号：</label>
-				<form:input path="code" htmlEscape="false" maxlength="20" class="input-medium"/>
+			<li><label>用户姓名：</label>
+				<form:input path="name" htmlEscape="false" maxlength="100" class="input-medium"/>
 			</li>
 			<li class="btns"><input id="btnSubmit" class="btn btn-primary" type="submit" value="查询"/></li>
 			<li class="clearfix"></li>
@@ -36,15 +36,14 @@
 	<table id="contentTable" class="table table-striped table-bordered table-condensed">
 		<thead>
 			<tr>
-				<th>学生编号</th>
+				<th>序号</th>
 				<th>姓名</th>
 				<th>班级</th>
 				<th>学号</th>
 				<th>性别</th>
+				<th>学历</th>
 				<th>入学联系电话</th>
 				<th>毕业联系电话</th>
-				<th>更新时间</th>
-				<th>备注信息</th>
 				<shiro:hasPermission name="student:studentInfo:edit"><th>操作</th></shiro:hasPermission>
 			</tr>
 		</thead>
@@ -52,13 +51,13 @@
 		<c:forEach items="${page.list}" var="studentInfo">
 			<tr>
 				<td>
-					${studentInfo.user.userid}
+						${studentInfo.userid}
 				</td>
 				<td>
-					${studentInfo.user.name}
+					${studentInfo.name}
 				</td>
 				<td>
-					${studentInfo.classes.name}
+						${studentInfo.classes.name}
 				</td>
 				<td>
 					${studentInfo.code}
@@ -67,20 +66,17 @@
 					${fns:getDictLabel(studentInfo.sex, 'sex', '')}
 				</td>
 				<td>
+					${fns:getDictLabel(studentInfo.schoolrecord, 'schoolrecord', '')}
+				</td>
+				<td>
 					${studentInfo.telephone}
 				</td>
 				<td>
 					${studentInfo.gtelephone}
 				</td>
-				<td>
-					<fmt:formatDate value="${studentInfo.updateDate}" pattern="yyyy-MM-dd HH:mm:ss"/>
-				</td>
-				<td>
-					${studentInfo.remarks}
-				</td>
 				<shiro:hasPermission name="student:studentInfo:edit"><td>
-    				<a href="${ctx}/student/studentInfo/form?id=${studentInfo.user.id}">修改</a>
-					<a href="${ctx}/student/studentInfo/delete?id=${studentInfo.user.id}" onclick="return confirmx('确认要删除该学生吗？', this.href)">删除</a>
+    				<a href="${ctx}/student/studentInfo/form?id=${studentInfo.userid}">修改</a>
+					<a href="${ctx}/student/studentInfo/delete?id=${studentInfo.userid}" onclick="return confirmx('确认要删除该学生吗？', this.href)">删除</a>
 				</td></shiro:hasPermission>
 			</tr>
 		</c:forEach>

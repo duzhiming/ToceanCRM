@@ -13,12 +13,13 @@ import com.thinkgem.jeesite.common.persistence.DataEntity;
 /**
  * 学生管理Entity
  * @author duzhiming
- * @version 2017-11-01
+ * @version 2017-11-02
  */
 public class StudentInfo extends DataEntity<StudentInfo> {
 	
 	private static final long serialVersionUID = 1L;
-	private CrmUser user;		// 学生编号
+	private Integer userid;		// 学生编号
+	private String name;		// 用户姓名
 	private String code;		// 学号
 	private String statuschange;		// 学籍改变
 	private String studenttype;		// 学生类型
@@ -65,21 +66,21 @@ public class StudentInfo extends DataEntity<StudentInfo> {
 	private String picfilename;		// 照片名
 	private String resume;		// 简历
 	private String resumefilename;		// 简历名
-	private String repayedcredit;		// 贷款情况
+	private String repayedcredit;		// 是否还清贷款
 	private String careerexclamation;		// 就业感言
 	private String company;		// 公司
 	private Integer salary;		// 薪水
 	private String returnvist;		// 回访记录
 	private String teacherevaluation;		// 班主任评价
 	private String pmevaluation;		// 项目经理评价
-	private String firstwritten;		// 第一次考试成绩
-	private String secondwritten;		// 第二次考试成绩
-	private String thirdwritten;		// 第三次考试成绩
-	private String scjp;		// SCJP考试成绩
-	private String firstpoll;		// 第一次项目考核成绩
-	private String secondpoll;		// 第二次项目考核成绩
-	private String thirdpoll;		// 第三次项目考核成绩
-	private CrmClasses classes;		// classes_id
+	private Double firstwritten;		// 第一次考试成绩
+	private Double secondwritten;		// 第二次考试成绩
+	private Double thirdwritten;		// 第三次考试成绩
+	private Double scjp;		// SCJP考试成绩
+	private Double firstpoll;		// 第一次项目考核成绩
+	private Double secondpoll;		// 第二次项目考核成绩
+	private Double thirdpoll;		// 第三次项目考核成绩
+	private CrmClasses classes;		// 教室编号
 	
 	public StudentInfo() {
 		super();
@@ -90,12 +91,21 @@ public class StudentInfo extends DataEntity<StudentInfo> {
 	}
 
 	@NotNull(message="学生编号不能为空")
-	public CrmUser getUser() {
-		return user;
+	public Integer getUserid() {
+		return userid;
 	}
 
-	public void setUser(CrmUser user) {
-		this.user = user;
+	public void setUserid(Integer userid) {
+		this.userid = userid;
+	}
+	
+	@Length(min=0, max=100, message="用户姓名长度必须介于 0 和 100 之间")
+	public String getName() {
+		return name;
+	}
+
+	public void setName(String name) {
+		this.name = name;
 	}
 	
 	@Length(min=0, max=20, message="学号长度必须介于 0 和 20 之间")
@@ -509,7 +519,7 @@ public class StudentInfo extends DataEntity<StudentInfo> {
 		this.resumefilename = resumefilename;
 	}
 	
-	@Length(min=1, max=1, message="贷款情况长度必须介于 1 和 1 之间")
+	@Length(min=1, max=1, message="是否还清贷款长度必须介于 1 和 1 之间")
 	public String getRepayedcredit() {
 		return repayedcredit;
 	}
@@ -567,62 +577,63 @@ public class StudentInfo extends DataEntity<StudentInfo> {
 		this.pmevaluation = pmevaluation;
 	}
 	
-	public String getFirstwritten() {
+	public Double getFirstwritten() {
 		return firstwritten;
 	}
 
-	public void setFirstwritten(String firstwritten) {
+	public void setFirstwritten(Double firstwritten) {
 		this.firstwritten = firstwritten;
 	}
 	
-	public String getSecondwritten() {
+	public Double getSecondwritten() {
 		return secondwritten;
 	}
 
-	public void setSecondwritten(String secondwritten) {
+	public void setSecondwritten(Double secondwritten) {
 		this.secondwritten = secondwritten;
 	}
 	
-	public String getThirdwritten() {
+	public Double getThirdwritten() {
 		return thirdwritten;
 	}
 
-	public void setThirdwritten(String thirdwritten) {
+	public void setThirdwritten(Double thirdwritten) {
 		this.thirdwritten = thirdwritten;
 	}
 	
-	public String getScjp() {
+	public Double getScjp() {
 		return scjp;
 	}
 
-	public void setScjp(String scjp) {
+	public void setScjp(Double scjp) {
 		this.scjp = scjp;
 	}
 	
-	public String getFirstpoll() {
+	public Double getFirstpoll() {
 		return firstpoll;
 	}
 
-	public void setFirstpoll(String firstpoll) {
+	public void setFirstpoll(Double firstpoll) {
 		this.firstpoll = firstpoll;
 	}
 	
-	public String getSecondpoll() {
+	public Double getSecondpoll() {
 		return secondpoll;
 	}
 
-	public void setSecondpoll(String secondpoll) {
+	public void setSecondpoll(Double secondpoll) {
 		this.secondpoll = secondpoll;
 	}
 	
-	public String getThirdpoll() {
+	public Double getThirdpoll() {
 		return thirdpoll;
 	}
 
-	public void setThirdpoll(String thirdpoll) {
+	public void setThirdpoll(Double thirdpoll) {
 		this.thirdpoll = thirdpoll;
 	}
 	
+	@Length(min=0, max=20, message="教室编号长度必须介于 0 和 20 之间")
 	public CrmClasses getClasses() {
 		return classes;
 	}

@@ -25,7 +25,7 @@ import com.thinkgem.jeesite.modules.student.service.CrmClassesService;
 /**
  * 课室信息Controller
  * @author duzhiming
- * @version 2017-11-01
+ * @version 2017-11-02
  */
 @Controller
 @RequestMapping(value = "${adminPath}/student/crmClasses")

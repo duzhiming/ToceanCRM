@@ -25,9 +25,6 @@
 		<input id="pageNo" name="pageNo" type="hidden" value="${page.pageNo}"/>
 		<input id="pageSize" name="pageSize" type="hidden" value="${page.pageSize}"/>
 		<ul class="ul-form">
-			<li><label>班级名：</label>
-				<form:input path="name" htmlEscape="false" maxlength="20" class="input-medium"/>
-			</li>
 			<li class="btns"><input id="btnSubmit" class="btn btn-primary" type="submit" value="查询"/></li>
 			<li class="clearfix"></li>
 		</ul>
@@ -36,6 +33,7 @@
 	<table id="contentTable" class="table table-striped table-bordered table-condensed">
 		<thead>
 			<tr>
+				<th>编号</th>
 				<th>班级名</th>
 				<th>更新时间</th>
 				<th>备注信息</th>
@@ -46,8 +44,11 @@
 		<c:forEach items="${page.list}" var="crmClasses">
 			<tr>
 				<td><a href="${ctx}/student/crmClasses/form?id=${crmClasses.id}">
-					${crmClasses.name}
+					${crmClasses.id}
 				</a></td>
+				<td>
+					${crmClasses.name}
+				</td>
 				<td>
 					<fmt:formatDate value="${crmClasses.updateDate}" pattern="yyyy-MM-dd HH:mm:ss"/>
 				</td>

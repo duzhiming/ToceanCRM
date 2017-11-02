@@ -12,7 +12,7 @@ import com.thinkgem.jeesite.common.persistence.DataEntity;
 /**
  * 课室信息Entity
  * @author duzhiming
- * @version 2017-11-01
+ * @version 2017-11-02
  */
 public class CrmClasses extends DataEntity<CrmClasses> {
 	
