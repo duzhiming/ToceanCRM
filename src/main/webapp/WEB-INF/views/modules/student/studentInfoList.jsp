@@ -25,10 +25,18 @@
 		<input id="pageNo" name="pageNo" type="hidden" value="${page.pageNo}"/>
 		<input id="pageSize" name="pageSize" type="hidden" value="${page.pageSize}"/>
 		<ul class="ul-form">
-			<li><label>用户姓名：</label>
+			<li><label>姓名：</label>
 				<form:input path="name" htmlEscape="false" maxlength="100" class="input-medium"/>
 			</li>
+			<li><label>班级：</label>
+				<form:select path="classes.name" class="input-medium">
+					<form:option value="" label=""/>
+
+				</form:select>
+			</li>
 			<li class="btns"><input id="btnSubmit" class="btn btn-primary" type="submit" value="查询"/></li>
+			<li class="btns"><input id="btnDelete" class="btn btn-primary" type="submit" value="删除"/></li>
+			<li class="btns"><input id="btnInset" class="btn btn-primary" type="submit" value="导入学员"/></li>
 			<li class="clearfix"></li>
 		</ul>
 	</form:form>
@@ -36,6 +44,7 @@
 	<table id="contentTable" class="table table-striped table-bordered table-condensed">
 		<thead>
 			<tr>
+				<th><input type="checkbox" name="selAll" onclick=""/></th>
 				<th>序号</th>
 				<th>姓名</th>
 				<th>班级</th>
@@ -50,6 +59,7 @@
 		<tbody>
 		<c:forEach items="${page.list}" var="studentInfo">
 			<tr>
+				<td><input type="checkbox" name="selOne" /></td>
 				<td>
 						${studentInfo.userid}
 				</td>

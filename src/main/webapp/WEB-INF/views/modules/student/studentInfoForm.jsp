@@ -32,114 +32,153 @@
 	</ul><br/>
 	<form:form id="inputForm" modelAttribute="studentInfo" action="${ctx}/student/studentInfo/save" method="post" class="form-horizontal">
 		<form:hidden path="id"/>
-		<sys:message content="${message}"/>		
+		<sys:message content="${message}"/>
 		<div class="control-group">
-			<label class="control-label">学生编号：</label>
-			<div class="controls">
-				<form:input path="userid" htmlEscape="false" maxlength="20" class="input-xlarge required digits"/>
-				<span class="help-inline"><font color="red">*</font> </span>
-			</div>
+			<table id="contentTable" class="table table-striped table-bordered">
+				<thead>
+				<tr>
+					<th>基本信息资料</th>
+				</tr>
+				</thead>
+				<tbody>
+					<tr>
+						<td>
+							<label>学生编号：</label>
+						</td>
+						<td>
+							<form:input path="userid" htmlEscape="false" maxlength="20" class="input-xlarge required digits"/>
+							<span class="help-inline"><font color="red">*</font> </span>
+						</td>
+						<td>
+							<label>用户姓名：</label>
+						</td>
+						<td>
+							<form:input path="name" htmlEscape="false" maxlength="100" class="input-xlarge "/>、
+						</td>
+					</tr>
+					<tr>
+						<td>
+							<label>学号：</label>
+						</td>
+						<td>
+							<form:input path="code" htmlEscape="false" maxlength="20" class="input-xlarge "/>
+						</td>
+						<td>
+							<label>学籍改变：</label>
+						</td>
+						<td>
+							<form:input path="statuschange" htmlEscape="false" maxlength="500" class="input-xlarge "/>
+						</td>
+					</tr>
+					<tr>
+						<td>
+							<label>学生类型：</label>
+						</td>
+						<td>
+							<form:select path="studenttype" class="input-xlarge ">
+								<form:option value="" label=""/>
+								<form:options items="${fns:getDictList('student_type')}" itemLabel="label" itemValue="value" htmlEscape="false"/>
+							</form:select>
+						</td>
+						<td>
+							<label>性别：</label>
+						</td>
+						<td>
+							<form:radiobuttons path="sex" items="${fns:getDictList('sex')}" itemLabel="label" itemValue="value" htmlEscape="false" class=""/>
+						</td>
+					</tr>
+					<tr>
+						<td>
+							<label>出生地：</label>
+						</td>
+						<td>
+							<form:input path="birthplace" htmlEscape="false" maxlength="100" class="input-xlarge "/>
+						</td>
+						<td>
+							<label>出生日期：</label>
+						</td>
+						<td>
+							<input name="birthday" type="text" readonly="readonly" maxlength="20" class="input-medium Wdate "
+							value="<fmt:formatDate value="${studentInfo.birthday}" pattern="yyyy-MM-dd HH:mm:ss"/>"
+							onclick="WdatePicker({dateFmt:'yyyy-MM-dd HH:mm:ss',isShowClear:false});"/>
+						</td>
+					</tr>
+					<tr>
+						<td>
+							<label>婚姻情况：</label>
+						</td>
+						<td>
+							<form:select path="married" class="input-xlarge ">
+								<form:option value="" label=""/>
+								<form:options items="${fns:getDictList('marry')}" itemLabel="label" itemValue="value" htmlEscape="false"/>
+							</form:select>
+						</td>
+						<td>
+							<label>学校：</label>
+						</td>
+						<td>
+							<form:input path="school" htmlEscape="false" maxlength="50" class="input-xlarge "/>
+						</td>
+					</tr>
+					<tr>
+						<td>
+							<label>部门：</label>
+						</td>
+						<td>
+							<form:input path="department" htmlEscape="false" maxlength="20" class="input-xlarge "/>
+						</td>
+						<td>
+							<label>专业：</label>
+						</td>
+						<td>
+							<form:input path="collegemajor" htmlEscape="false" maxlength="20" class="input-xlarge "/>
+						</td>
+					</tr>
+					<tr>
+						<td>
+							<label>学历：</label>
+						</td>
+						<td>
+							<form:select path="schoolrecord" class="input-xlarge ">
+								<form:option value="" label=""/>
+								<form:options items="${fns:getDictList('schoolrecord')}" itemLabel="label" itemValue="value" htmlEscape="false"/>
+							</form:select>
+						</td>
+						<td>
+							<label>毕业时间：</label>
+						</td>
+						<td>
+							<form:input path="graduatedate" htmlEscape="false" maxlength="10" class="input-xlarge "/>
+						</td>
+					</tr>
+					<tr>
+						<td>
+							<label>入学联系电话：</label>
+						</td>
+						<td>
+							<form:input path="telephone" htmlEscape="false" maxlength="50" class="input-xlarge "/>
+						</td>
+						<td>
+							<label>毕业联系电话：</label>
+						</td>
+						<td>
+							<form:input path="gtelephone" htmlEscape="false" maxlength="50" class="input-xlarge "/>
+						</td>
+					</tr>
+				</tbody>
+			</table>
+		</div>
+
+
+
+
+		<div class="control-group">
+			<label class="control-label"></label>
+			<div class="controls"></div>
 		</div>
 		<div class="control-group">
-			<label class="control-label">用户姓名：</label>
-			<div class="controls">
-				<form:input path="name" htmlEscape="false" maxlength="100" class="input-xlarge "/>
-			</div>
-		</div>
-		<div class="control-group">
-			<label class="control-label">学号：</label>
-			<div class="controls">
-				<form:input path="code" htmlEscape="false" maxlength="20" class="input-xlarge "/>
-			</div>
-		</div>
-		<div class="control-group">
-			<label class="control-label">学籍改变：</label>
-			<div class="controls">
-				<form:input path="statuschange" htmlEscape="false" maxlength="500" class="input-xlarge "/>
-			</div>
-		</div>
-		<div class="control-group">
-			<label class="control-label">学生类型：</label>
-			<div class="controls">
-				<form:select path="studenttype" class="input-xlarge ">
-					<form:option value="" label=""/>
-					<form:options items="${fns:getDictList('student_type')}" itemLabel="label" itemValue="value" htmlEscape="false"/>
-				</form:select>
-			</div>
-		</div>
-		<div class="control-group">
-			<label class="control-label">性别：</label>
-			<div class="controls">
-				<form:radiobuttons path="sex" items="${fns:getDictList('sex')}" itemLabel="label" itemValue="value" htmlEscape="false" class=""/>
-			</div>
-		</div>
-		<div class="control-group">
-			<label class="control-label">出生地：</label>
-			<div class="controls">
-				<form:input path="birthplace" htmlEscape="false" maxlength="100" class="input-xlarge "/>
-			</div>
-		</div>
-		<div class="control-group">
-			<label class="control-label">出生日期：</label>
-			<div class="controls">
-				<input name="birthday" type="text" readonly="readonly" maxlength="20" class="input-medium Wdate "
-					value="<fmt:formatDate value="${studentInfo.birthday}" pattern="yyyy-MM-dd HH:mm:ss"/>"
-					onclick="WdatePicker({dateFmt:'yyyy-MM-dd HH:mm:ss',isShowClear:false});"/>
-			</div>
-		</div>
-		<div class="control-group">
-			<label class="control-label">婚姻情况：</label>
-			<div class="controls">
-				<form:select path="married" class="input-xlarge ">
-					<form:option value="" label=""/>
-					<form:options items="${fns:getDictList('marry')}" itemLabel="label" itemValue="value" htmlEscape="false"/>
-				</form:select>
-			</div>
-		</div>
-		<div class="control-group">
-			<label class="control-label">学校：</label>
-			<div class="controls">
-				<form:input path="school" htmlEscape="false" maxlength="50" class="input-xlarge "/>
-			</div>
-		</div>
-		<div class="control-group">
-			<label class="control-label">部门：</label>
-			<div class="controls">
-				<form:input path="department" htmlEscape="false" maxlength="20" class="input-xlarge "/>
-			</div>
-		</div>
-		<div class="control-group">
-			<label class="control-label">专业：</label>
-			<div class="controls">
-				<form:input path="collegemajor" htmlEscape="false" maxlength="20" class="input-xlarge "/>
-			</div>
-		</div>
-		<div class="control-group">
-			<label class="control-label">学历：</label>
-			<div class="controls">
-				<form:select path="schoolrecord" class="input-xlarge ">
-					<form:option value="" label=""/>
-					<form:options items="${fns:getDictList('schoolrecord')}" itemLabel="label" itemValue="value" htmlEscape="false"/>
-				</form:select>
-			</div>
-		</div>
-		<div class="control-group">
-			<label class="control-label">毕业时间：</label>
-			<div class="controls">
-				<form:input path="graduatedate" htmlEscape="false" maxlength="10" class="input-xlarge "/>
-			</div>
-		</div>
-		<div class="control-group">
-			<label class="control-label">入学联系电话：</label>
-			<div class="controls">
-				<form:input path="telephone" htmlEscape="false" maxlength="50" class="input-xlarge "/>
-			</div>
-		</div>
-		<div class="control-group">
-			<label class="control-label">毕业联系电话：</label>
-			<div class="controls">
-				<form:input path="gtelephone" htmlEscape="false" maxlength="50" class="input-xlarge "/>
-			</div>
+			<label class="control-label"></label>
+			<div class="controls"></div>
 		</div>
 		<div class="control-group">
 			<label class="control-label">email：</label>
