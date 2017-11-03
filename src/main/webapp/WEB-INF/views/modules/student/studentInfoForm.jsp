@@ -43,26 +43,28 @@
 				<tbody>
 					<tr>
 						<td>
-							<label>学生编号：</label>
-						</td>
-						<td>
-							<form:input path="userid" htmlEscape="false" maxlength="20" class="input-xlarge required digits"/>
-							<span class="help-inline"><font color="red">*</font> </span>
-						</td>
-						<td>
 							<label>用户姓名：</label>
 						</td>
 						<td>
-							<form:input path="name" htmlEscape="false" maxlength="100" class="input-xlarge "/>、
+							<form:input path="name" htmlEscape="false" maxlength="100" class="input-xlarge "/>
+							<span class="help-inline"><font color="red">*</font> </span>
 						</td>
-					</tr>
-					<tr>
 						<td>
 							<label>学号：</label>
 						</td>
 						<td>
 							<form:input path="code" htmlEscape="false" maxlength="20" class="input-xlarge "/>
 						</td>
+					</tr>
+					<tr>
+						<td>
+							<label>学生编号：</label>
+						</td>
+						<td>
+							<form:input path="userid" htmlEscape="false" maxlength="20" class="input-xlarge required digits"/>
+							<span class="help-inline"><font color="red">*</font> </span>
+						</td>
+
 						<td>
 							<label>学籍改变：</label>
 						</td>
@@ -151,20 +153,7 @@
 							<form:input path="graduatedate" htmlEscape="false" maxlength="10" class="input-xlarge "/>
 						</td>
 					</tr>
-					<tr>
-						<td>
-							<label>入学联系电话：</label>
-						</td>
-						<td>
-							<form:input path="telephone" htmlEscape="false" maxlength="50" class="input-xlarge "/>
-						</td>
-						<td>
-							<label>毕业联系电话：</label>
-						</td>
-						<td>
-							<form:input path="gtelephone" htmlEscape="false" maxlength="50" class="input-xlarge "/>
-						</td>
-					</tr>
+
 				</tbody>
 			</table>
 		</div>
