@@ -3,7 +3,7 @@
 <mapper namespace="com.thinkgem.jeesite.modules.student.dao.StudentInfoDao">
     
 	<sql id="studentInfoColumns">
-		a.userid AS "userid",
+		a.id AS "id",
 		a.name AS "name",
 		a.code AS "code",
 		a.statuschange AS "statuschange",
@@ -84,7 +84,7 @@
 			<include refid="studentInfoColumns"/>
 		FROM crm_student_info a
 		<include refid="studentInfoJoins"/>
-		WHERE a.userid = #{id}
+		WHERE a.id = #{id}
 	</select>
 	
 	<select id="findList" resultType="StudentInfo">
@@ -131,7 +131,7 @@
 	
 	<insert id="insert">
 		INSERT INTO crm_student_info(
-			userid,
+			id,
 			name,
 			code,
 			statuschange,
@@ -201,7 +201,7 @@
 			remarks,
 			del_flag
 		) VALUES (
-			#{userid},
+			#{id},
 			#{name},
 			#{code},
 			#{statuschange},
@@ -275,7 +275,7 @@
 	
 	<update id="update">
 		UPDATE crm_student_info SET 	
-			userid = #{userid},
+			id = #{id},
 			name = #{name},
 			code = #{code},
 			statuschange = #{statuschange},
@@ -341,13 +341,13 @@
 			update_by = #{updateBy.id},
 			update_date = #{updateDate},
 			remarks = #{remarks}
-		WHERE userid = #{id}
+		WHERE id = #{id}
 	</update>
 	
 	<update id="delete">
 		UPDATE crm_student_info SET 
 			del_flag = #{DEL_FLAG_DELETE}
-		WHERE userid = #{id}
+		WHERE id = #{id}
 	</update>
 	
 </mapper>

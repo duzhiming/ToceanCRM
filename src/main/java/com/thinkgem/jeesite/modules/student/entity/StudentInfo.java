@@ -18,7 +18,6 @@ import com.thinkgem.jeesite.common.persistence.DataEntity;
 public class StudentInfo extends DataEntity<StudentInfo> {
 	
 	private static final long serialVersionUID = 1L;
-	private Integer userid;		// 学生编号
 	private String name;		// 用户姓名
 	private String code;		// 学号
 	private String statuschange;		// 学籍改变
@@ -40,7 +39,7 @@ public class StudentInfo extends DataEntity<StudentInfo> {
 	private String homephone;		// 家庭电话
 	private String homeaddress;		// 家庭地址
 	private String comminucationaddress;		// 通讯地址
-	private String credentialno;		// 出勤号
+	private String credentialno;		// 证件号
 	private String guardian;		// 监护人
 	private String guardianphone;		// 监护人联系电话
 	private String relation;		// 与本人关系
@@ -88,15 +87,6 @@ public class StudentInfo extends DataEntity<StudentInfo> {
 
 	public StudentInfo(String id){
 		super(id);
-	}
-
-	@NotNull(message="学生编号不能为空")
-	public Integer getUserid() {
-		return userid;
-	}
-
-	public void setUserid(Integer userid) {
-		this.userid = userid;
 	}
 	
 	@Length(min=0, max=100, message="用户姓名长度必须介于 0 和 100 之间")
@@ -633,7 +623,6 @@ public class StudentInfo extends DataEntity<StudentInfo> {
 		this.thirdpoll = thirdpoll;
 	}
 	
-	@Length(min=0, max=20, message="教室编号长度必须介于 0 和 20 之间")
 	public CrmClasses getClasses() {
 		return classes;
 	}

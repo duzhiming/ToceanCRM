@@ -61,13 +61,13 @@
 			<tr>
 				<td><input type="checkbox" name="selOne" /></td>
 				<td>
-						${studentInfo.userid}
+						${studentInfo.id}
 				</td>
 				<td>
 					${studentInfo.name}
 				</td>
 				<td>
-						${studentInfo.classes.name}
+					${studentInfo.classes.name}
 				</td>
 				<td>
 					${studentInfo.code}
@@ -85,8 +85,8 @@
 					${studentInfo.gtelephone}
 				</td>
 				<shiro:hasPermission name="student:studentInfo:edit"><td>
-    				<a href="${ctx}/student/studentInfo/form?id=${studentInfo.userid}">修改</a>
-					<a href="${ctx}/student/studentInfo/delete?id=${studentInfo.userid}" onclick="return confirmx('确认要删除该学生吗？', this.href)">删除</a>
+    				<a href="${ctx}/student/studentInfo/form?id=${studentInfo.id}">修改</a>
+					<a href="${ctx}/student/studentInfo/delete?id=${studentInfo.id}" onclick="return confirmx('确认要删除该学生吗？', this.href)">删除</a>
 				</td></shiro:hasPermission>
 			</tr>
 		</c:forEach>
