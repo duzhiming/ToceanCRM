@@ -3,24 +3,23 @@
  */
 package com.thinkgem.jeesite.modules.student.entity;
 
-import org.hibernate.validator.constraints.Length;
 import java.util.Date;
 import com.fasterxml.jackson.annotation.JsonFormat;
 
 import com.thinkgem.jeesite.common.persistence.DataEntity;
+import com.thinkgem.jeesite.modules.sys.entity.User;
 
 /**
- * 学生转介绍管理Entity
+ * 学员转介绍Entity
  * @author duzhiming
- * @version 2017-10-31
+ * @version 2017-11-06
  */
 public class StudentIntroduce extends DataEntity<StudentIntroduce> {
 	
 	private static final long serialVersionUID = 1L;
-	private String stuname;		// 学员
 	private Date introdate;		// 介绍日期
-	private String empname;		// 介绍人
-	private StudentInfo student;		// 学员编号
+	private User employee;		// 介绍人
+	private StudentInfo student;		// 学生
 	
 	public StudentIntroduce() {
 		super();
@@ -30,15 +29,6 @@ public class StudentIntroduce extends DataEntity<StudentIntroduce> {
 		super(id);
 	}
 
-	@Length(min=0, max=10, message="学员长度必须介于 0 和 10 之间")
-	public String getStuname() {
-		return stuname;
-	}
-
-	public void setStuname(String stuname) {
-		this.stuname = stuname;
-	}
-	
 	@JsonFormat(pattern = "yyyy-MM-dd HH:mm:ss")
 	public Date getIntrodate() {
 		return introdate;
@@ -48,13 +38,12 @@ public class StudentIntroduce extends DataEntity<StudentIntroduce> {
 		this.introdate = introdate;
 	}
 	
-	@Length(min=0, max=20, message="介绍人长度必须介于 0 和 20 之间")
-	public String getEmpname() {
-		return empname;
+	public User getEmployee() {
+		return employee;
 	}
 
-	public void setEmpname(String empname) {
-		this.empname = empname;
+	public void setEmployee(User employee) {
+		this.employee = employee;
 	}
 	
 	public StudentInfo getStudent() {

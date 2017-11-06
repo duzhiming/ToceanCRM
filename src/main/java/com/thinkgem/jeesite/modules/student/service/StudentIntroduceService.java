@@ -14,9 +14,9 @@ import com.thinkgem.jeesite.modules.student.entity.StudentIntroduce;
 import com.thinkgem.jeesite.modules.student.dao.StudentIntroduceDao;
 
 /**
- * 学生转介绍管理Service
+ * 学员转介绍Service
  * @author duzhiming
- * @version 2017-10-31
+ * @version 2017-11-06
  */
 @Service
 @Transactional(readOnly = true)

@@ -4,22 +4,30 @@
     
 	<sql id="studentIntroduceColumns">
 		a.id AS "id",
-		a.stuname AS "stuname",
 		a.introdate AS "introdate",
-		a.empname AS "empname",
+		a.employee_id AS "employee.id",
+		u.name AS "employee.name",
 		a.student_id AS "student.id",
 		u1.name AS "student.name",
-		u1.classes AS "student.classes"
+		u2.name AS "student.classes.name",
+		a.create_by AS "createBy.id",
+		a.create_date AS "createDate",
+		a.update_by AS "updateBy.id",
+		a.update_date AS "updateDate",
+		a.remarks AS "remarks",
+		a.del_flag AS "delFlag"
 	</sql>
 	
 	<sql id="studentIntroduceJoins">
-		LEFT JOIN student_info u1 ON u1.userid = a.student_id
+		LEFT JOIN sys_user u ON u.id = a.employee_id
+		LEFT JOIN crm_student_info u1 ON u1.id = a.student_id
+		LEFT JOIN crm_classes u2 ON u2.id =u1.classes_id
 	</sql>
     
 	<select id="get" resultType="StudentIntroduce">
 		SELECT 
 			<include refid="studentIntroduceColumns"/>
-		FROM student_introduce a
+		FROM crm_student_introduce a
 		<include refid="studentIntroduceJoins"/>
 		WHERE a.id = #{id}
 	</select>
@@ -27,22 +35,17 @@
 	<select id="findList" resultType="StudentIntroduce">
 		SELECT 
 			<include refid="studentIntroduceColumns"/>
-		FROM student_introduce a
+		FROM crm_student_introduce a
 		<include refid="studentIntroduceJoins"/>
 		<where>
-			
-			<if test="stuname != null and stuname != ''">
-				AND a.stuname = #{stuname}
-			</if>
-			<if test="introdate != null and introdate != ''">
-				AND a.introdate = #{introdate}
-			</if>
+			a.del_flag = #{DEL_FLAG_NORMAL}
 		</where>
 		<choose>
 			<when test="page !=null and page.orderBy != null and page.orderBy != ''">
 				ORDER BY ${page.orderBy}
 			</when>
 			<otherwise>
+				ORDER BY a.update_date DESC
 			</otherwise>
 		</choose>
 	</select>
@@ -50,47 +53,61 @@
 	<select id="findAllList" resultType="StudentIntroduce">
 		SELECT 
 			<include refid="studentIntroduceColumns"/>
-		FROM student_introduce a
+		FROM crm_student_introduce a
 		<include refid="studentIntroduceJoins"/>
 		<where>
-			
+			a.del_flag = #{DEL_FLAG_NORMAL}
 		</where>		
 		<choose>
 			<when test="page !=null and page.orderBy != null and page.orderBy != ''">
 				ORDER BY ${page.orderBy}
 			</when>
 			<otherwise>
+				ORDER BY a.update_date DESC
 			</otherwise>
 		</choose>
 	</select>
 	
 	<insert id="insert">
-		INSERT INTO student_introduce(
+		INSERT INTO crm_student_introduce(
 			id,
-			stuname,
 			introdate,
-			empname,
-			student_id
+			employee_id,
+			student_id,
+			create_by,
+			create_date,
+			update_by,
+			update_date,
+			remarks,
+			del_flag
 		) VALUES (
 			#{id},
-			#{stuname},
 			#{introdate},
-			#{empname},
-			#{student.id}
+			#{employee.id},
+			#{student.id},
+			#{createBy.id},
+			#{createDate},
+			#{updateBy.id},
+			#{updateDate},
+			#{remarks},
+			#{delFlag}
 		)
 	</insert>
 	
 	<update id="update">
-		UPDATE student_introduce SET 	
-			stuname = #{stuname},
+		UPDATE crm_student_introduce SET 	
 			introdate = #{introdate},
-			empname = #{empname},
-			student_id = #{student.id}
+			employee_id = #{employee.id},
+			student_id = #{student.id},
+			update_by = #{updateBy.id},
+			update_date = #{updateDate},
+			remarks = #{remarks}
 		WHERE id = #{id}
 	</update>
 	
 	<update id="delete">
-		DELETE FROM student_introduce
+		UPDATE crm_student_introduce SET 
+			del_flag = #{DEL_FLAG_DELETE}
 		WHERE id = #{id}
 	</update>
 	

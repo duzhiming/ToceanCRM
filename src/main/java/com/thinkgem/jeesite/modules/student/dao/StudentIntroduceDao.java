@@ -8,9 +8,9 @@ import com.thinkgem.jeesite.common.persistence.annotation.MyBatisDao;
 import com.thinkgem.jeesite.modules.student.entity.StudentIntroduce;
 
 /**
- * 学生转介绍管理DAO接口
+ * 学员转介绍DAO接口
  * @author duzhiming
- * @version 2017-10-31
+ * @version 2017-11-06
  */
 @MyBatisDao
 public interface StudentIntroduceDao extends CrudDao<StudentIntroduce> {

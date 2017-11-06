@@ -23,9 +23,9 @@ import com.thinkgem.jeesite.modules.student.entity.StudentIntroduce;
 import com.thinkgem.jeesite.modules.student.service.StudentIntroduceService;
 
 /**
- * 学生转介绍管理Controller
+ * 学员转介绍Controller
  * @author duzhiming
- * @version 2017-10-31
+ * @version 2017-11-06
  */
 @Controller
 @RequestMapping(value = "${adminPath}/student/studentIntroduce")
@@ -68,7 +68,7 @@ public class StudentIntroduceController extends BaseController {
 			return form(studentIntroduce, model);
 		}
 		studentIntroduceService.save(studentIntroduce);
-		addMessage(redirectAttributes, "保存转介绍成功");
+		addMessage(redirectAttributes, "保存学员转介绍成功");
 		return "redirect:"+Global.getAdminPath()+"/student/studentIntroduce/?repage";
 	}
 	
@@ -76,7 +76,7 @@ public class StudentIntroduceController extends BaseController {
 	@RequestMapping(value = "delete")
 	public String delete(StudentIntroduce studentIntroduce, RedirectAttributes redirectAttributes) {
 		studentIntroduceService.delete(studentIntroduce);
-		addMessage(redirectAttributes, "删除转介绍成功");
+		addMessage(redirectAttributes, "删除学员转介绍成功");
 		return "redirect:"+Global.getAdminPath()+"/student/studentIntroduce/?repage";
 	}
 
