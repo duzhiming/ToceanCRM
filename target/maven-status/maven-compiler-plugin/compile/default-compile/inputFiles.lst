@@ -8,6 +8,7 @@ E:\toceanCRM项目\toceanCRM\src\main\java\com\thinkgem\jeesite\modules\cms\web\
 E:\toceanCRM项目\toceanCRM\src\main\java\com\thinkgem\jeesite\modules\gen\service\GenSchemeService.java
 E:\toceanCRM项目\toceanCRM\src\main\java\com\thinkgem\jeesite\modules\sys\interceptor\LogInterceptor.java
 E:\toceanCRM项目\toceanCRM\src\main\java\com\thinkgem\jeesite\common\mapper\JaxbMapper.java
+E:\toceanCRM项目\toceanCRM\src\main\java\com\thinkgem\jeesite\modules\student\dao\StudentPraiseDao.java
 E:\toceanCRM项目\toceanCRM\src\main\java\com\thinkgem\jeesite\modules\act\rest\diagram\services\BaseProcessDefinitionDiagramLayoutResource.java
 E:\toceanCRM项目\toceanCRM\src\main\java\com\thinkgem\jeesite\modules\act\entity\Act.java
 E:\toceanCRM项目\toceanCRM\src\main\java\com\thinkgem\jeesite\common\supcan\treelist\TreeList.java
@@ -32,6 +33,7 @@ E:\toceanCRM项目\toceanCRM\src\main\java\com\thinkgem\jeesite\common\persisten
 E:\toceanCRM项目\toceanCRM\src\main\java\com\thinkgem\jeesite\modules\sys\interceptor\MobileInterceptor.java
 E:\toceanCRM项目\toceanCRM\src\main\java\com\thinkgem\jeesite\common\utils\DateUtils.java
 E:\toceanCRM项目\toceanCRM\src\main\java\com\thinkgem\jeesite\modules\student\web\CrmClassesController.java
+E:\toceanCRM项目\toceanCRM\src\main\java\com\thinkgem\jeesite\modules\student\entity\StudentPraise.java
 E:\toceanCRM项目\toceanCRM\src\main\java\org\mybatis\spring\SqlSessionFactoryBean.java
 E:\toceanCRM项目\toceanCRM\src\main\java\com\thinkgem\jeesite\common\supcan\freeform\FreeForm.java
 E:\toceanCRM项目\toceanCRM\src\main\java\com\thinkgem\jeesite\modules\book\entity\Product.java
@@ -94,7 +96,6 @@ E:\toceanCRM项目\toceanCRM\src\main\java\com\thinkgem\jeesite\modules\gen\web\
 E:\toceanCRM项目\toceanCRM\src\main\java\com\thinkgem\jeesite\common\persistence\proxy\PaginationMapperProxy.java
 E:\toceanCRM项目\toceanCRM\src\main\java\com\thinkgem\jeesite\modules\sys\dao\UserDao.java
 E:\toceanCRM项目\toceanCRM\src\main\java\com\thinkgem\jeesite\modules\oa\entity\TestAudit.java
-E:\toceanCRM项目\toceanCRM\src\main\java\com\thinkgem\jeesite\modules\student\web\StuPraiseController.java
 E:\toceanCRM项目\toceanCRM\src\main\java\com\thinkgem\jeesite\common\utils\JedisUtils.java
 E:\toceanCRM项目\toceanCRM\src\main\java\com\thinkgem\jeesite\test\dao\TestDataChildDao.java
 E:\toceanCRM项目\toceanCRM\src\main\java\com\thinkgem\jeesite\modules\cms\service\ArticleService.java
@@ -129,6 +130,7 @@ E:\toceanCRM项目\toceanCRM\src\main\java\org\apache\ibatis\thread\PropertiesUt
 E:\toceanCRM项目\toceanCRM\src\main\java\com\thinkgem\jeesite\common\supcan\treelist\cols\Group.java
 E:\toceanCRM项目\toceanCRM\src\main\java\com\thinkgem\jeesite\common\persistence\dialect\db\OracleDialect.java
 E:\toceanCRM项目\toceanCRM\src\main\java\com\thinkgem\jeesite\common\utils\EhCacheUtils.java
+E:\toceanCRM项目\toceanCRM\src\main\java\com\thinkgem\jeesite\modules\student\web\StudentPraiseController.java
 E:\toceanCRM项目\toceanCRM\src\main\java\com\thinkgem\jeesite\modules\sys\entity\Log.java
 E:\toceanCRM项目\toceanCRM\src\main\java\com\thinkgem\jeesite\test\web\TestDataController.java
 E:\toceanCRM项目\toceanCRM\src\main\java\com\thinkgem\jeesite\modules\gen\dao\GenSchemeDao.java
@@ -163,6 +165,7 @@ E:\toceanCRM项目\toceanCRM\src\main\java\com\thinkgem\jeesite\common\security\
 E:\toceanCRM项目\toceanCRM\src\main\java\com\thinkgem\jeesite\common\persistence\interceptor\SQLHelper.java
 E:\toceanCRM项目\toceanCRM\src\main\java\com\thinkgem\jeesite\common\supcan\common\properties\Background.java
 E:\toceanCRM项目\toceanCRM\src\main\java\com\thinkgem\jeesite\modules\cms\web\front\FrontSearchController.java
+E:\toceanCRM项目\toceanCRM\src\main\java\com\thinkgem\jeesite\modules\student\service\StudentPraiseService.java
 E:\toceanCRM项目\toceanCRM\src\main\java\com\thinkgem\jeesite\common\supcan\annotation\treelist\SupTreeList.java
 E:\toceanCRM项目\toceanCRM\src\main\java\com\thinkgem\jeesite\modules\cms\entity\Site.java
 E:\toceanCRM项目\toceanCRM\src\main\java\com\thinkgem\jeesite\modules\gen\util\GenUtils.java
@@ -175,13 +178,11 @@ E:\toceanCRM项目\toceanCRM\src\main\java\com\thinkgem\jeesite\common\xstream\D
 E:\toceanCRM项目\toceanCRM\src\main\java\com\thinkgem\jeesite\modules\gen\dao\GenTemplateDao.java
 E:\toceanCRM项目\toceanCRM\src\main\java\com\thinkgem\jeesite\modules\student\service\StudentIntroduceService.java
 E:\toceanCRM项目\toceanCRM\src\main\java\com\thinkgem\jeesite\common\servlet\UserfilesDownloadServlet.java
-E:\toceanCRM项目\toceanCRM\src\main\java\com\thinkgem\jeesite\modules\student\dao\StuPraiseDao.java
 E:\toceanCRM项目\toceanCRM\src\main\java\com\thinkgem\jeesite\modules\book\service\ProductService.java
 E:\toceanCRM项目\toceanCRM\src\main\java\com\thinkgem\jeesite\modules\sys\web\OfficeController.java
 E:\toceanCRM项目\toceanCRM\src\main\java\com\thinkgem\jeesite\common\utils\MacUtils.java
 E:\toceanCRM项目\toceanCRM\src\main\java\com\thinkgem\jeesite\modules\act\service\ActModelService.java
 E:\toceanCRM项目\toceanCRM\src\main\java\com\thinkgem\jeesite\modules\cms\web\CategoryController.java
-E:\toceanCRM项目\toceanCRM\src\main\java\com\thinkgem\jeesite\modules\student\entity\StuPraise.java
 E:\toceanCRM项目\toceanCRM\src\main\java\com\thinkgem\jeesite\test\dao\TestTreeDao.java
 E:\toceanCRM项目\toceanCRM\src\main\java\com\thinkgem\jeesite\common\persistence\dialect\db\MySQLDialect.java
 E:\toceanCRM项目\toceanCRM\src\main\java\com\thinkgem\jeesite\common\utils\IdGen.java
@@ -291,7 +292,6 @@ E:\toceanCRM项目\toceanCRM\src\main\java\com\thinkgem\jeesite\modules\act\serv
 E:\toceanCRM项目\toceanCRM\src\main\java\com\thinkgem\jeesite\common\persistence\proxy\PageConfiguration.java
 E:\toceanCRM项目\toceanCRM\src\main\java\com\thinkgem\jeesite\common\security\Cryptos.java
 E:\toceanCRM项目\toceanCRM\src\main\java\com\thinkgem\jeesite\common\utils\PropertiesLoader.java
-E:\toceanCRM项目\toceanCRM\src\main\java\com\thinkgem\jeesite\modules\student\service\StuPraiseService.java
 E:\toceanCRM项目\toceanCRM\src\main\java\com\thinkgem\jeesite\modules\book\dao\BookDao.java
 E:\toceanCRM项目\toceanCRM\src\main\java\com\thinkgem\jeesite\modules\sys\web\RoleController.java
 E:\toceanCRM项目\toceanCRM\src\main\java\com\thinkgem\jeesite\common\persistence\dialect\db\SQLServer2005Dialect.java

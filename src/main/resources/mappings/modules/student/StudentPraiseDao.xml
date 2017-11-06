@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8" ?>
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
-<mapper namespace="com.thinkgem.jeesite.modules.student.dao.StuPraiseDao">
+<mapper namespace="com.thinkgem.jeesite.modules.student.dao.StudentPraiseDao">
     
-	<sql id="stuPraiseColumns">
+	<sql id="studentPraiseColumns">
 		a.id AS "id",
 		a.praisedate AS "praisedate",
 		a.praiseway AS "praiseway",
@@ -10,64 +10,74 @@
 		a.score AS "score",
 		a.student_id AS "student.id",
 		u1.name AS "student.name",
-		u1.cname AS "student.cname",
+		u2.name AS "student.classes.name",
 		a.booker AS "booker",
 		a.bookdate AS "bookdate",
 		a.confirmer AS "confirmer",
 		a.confirmdate AS "confirmdate",
 		a.approve AS "approve",
 		a.status AS "status",
-		a.opinion AS "opinion"
+		a.opinion AS "opinion",
+		a.create_by AS "createBy.id",
+		a.create_date AS "createDate",
+		a.update_by AS "updateBy.id",
+		a.update_date AS "updateDate",
+		a.remarks AS "remarks",
+		a.del_flag AS "delFlag"
 	</sql>
 	
-	<sql id="stuPraiseJoins">
-		LEFT JOIN student_info u1 ON u1.userid = a.student_id
+	<sql id="studentPraiseJoins">
+		LEFT JOIN crm_student_info u1 ON u1.id = a.student_id
+		LEFT JOIN crm_classes u2 ON u2.id =u1.classes_id
 	</sql>
     
-	<select id="get" resultType="StuPraise">
+	<select id="get" resultType="StudentPraise">
 		SELECT 
-			<include refid="stuPraiseColumns"/>
-		FROM student_praise a
-		<include refid="stuPraiseJoins"/>
+			<include refid="studentPraiseColumns"/>
+		FROM crm_student_praise a
+		<include refid="studentPraiseJoins"/>
 		WHERE a.id = #{id}
 	</select>
 	
-	<select id="findList" resultType="StuPraise">
+	<select id="findList" resultType="StudentPraise">
 		SELECT 
-			<include refid="stuPraiseColumns"/>
-		FROM student_praise a
-		<include refid="stuPraiseJoins"/>
+			<include refid="studentPraiseColumns"/>
+		FROM crm_student_praise a
+		<include refid="studentPraiseJoins"/>
 		<where>
-			
+			a.del_flag = #{DEL_FLAG_NORMAL}
 		</where>
 		<choose>
 			<when test="page !=null and page.orderBy != null and page.orderBy != ''">
 				ORDER BY ${page.orderBy}
 			</when>
 			<otherwise>
+				ORDER BY a.update_date DESC
 			</otherwise>
 		</choose>
 	</select>
 	
-	<select id="findAllList" resultType="StuPraise">
+	<select id="findAllList" resultType="StudentPraise">
 		SELECT 
-			<include refid="stuPraiseColumns"/>
-		FROM student_praise a
-		<include refid="stuPraiseJoins"/>
+			<include refid="studentPraiseColumns"/>
+		FROM crm_student_praise a
+		<include refid="studentPraiseJoins"/>
 		<where>
-			
+			a.del_flag = #{DEL_FLAG_NORMAL}
 		</where>		
 		<choose>
 			<when test="page !=null and page.orderBy != null and page.orderBy != ''">
 				ORDER BY ${page.orderBy}
 			</when>
 			<otherwise>
+				ORDER BY a.update_date DESC
 			</otherwise>
 		</choose>
 	</select>
 	
 	<insert id="insert">
-		INSERT INTO student_praise(
+		INSERT INTO crm_student_praise(
+			id,
 			praisedate,
 			praiseway,
 			reason,
@@ -79,8 +89,15 @@
 			confirmdate,
 			approve,
 			status,
-			opinion
+			opinion,
+			create_by,
+			create_date,
+			update_by,
+			update_date,
+			remarks,
+			del_flag
 		) VALUES (
+			#{id},
 			#{praisedate},
 			#{praiseway},
 			#{reason},
@@ -92,12 +109,18 @@
 			#{confirmdate},
 			#{approve},
 			#{status},
-			#{opinion}
+			#{opinion},
+			#{createBy.id},
+			#{createDate},
+			#{updateBy.id},
+			#{updateDate},
+			#{remarks},
+			#{delFlag}
 		)
 	</insert>
 	
 	<update id="update">
-		UPDATE student_praise SET 	
+		UPDATE crm_student_praise SET 	
 			praisedate = #{praisedate},
 			praiseway = #{praiseway},
 			reason = #{reason},
@@ -109,12 +132,16 @@
 			confirmdate = #{confirmdate},
 			approve = #{approve},
 			status = #{status},
-			opinion = #{opinion}
+			opinion = #{opinion},
+			update_by = #{updateBy.id},
+			update_date = #{updateDate},
+			remarks = #{remarks}
 		WHERE id = #{id}
 	</update>
 	
 	<update id="delete">
-		DELETE FROM student_praise
+		UPDATE crm_student_praise SET 
+			del_flag = #{DEL_FLAG_DELETE}
 		WHERE id = #{id}
 	</update>
 	

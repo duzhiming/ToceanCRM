@@ -5,14 +5,14 @@ package com.thinkgem.jeesite.modules.student.dao;
 
 import com.thinkgem.jeesite.common.persistence.CrudDao;
 import com.thinkgem.jeesite.common.persistence.annotation.MyBatisDao;
-import com.thinkgem.jeesite.modules.student.entity.StuPraise;
+import com.thinkgem.jeesite.modules.student.entity.StudentPraise;
 
 /**
- * 表扬管理DAO接口
- * @author duzhiming
- * @version 2017-10-30
+ * 学生表扬DAO接口
+ * @author yuangmingyu
+ * @version 2017-11-06
  */
 @MyBatisDao
-public interface StuPraiseDao extends CrudDao<StuPraise> {
+public interface StudentPraiseDao extends CrudDao<StudentPraise> {
 	
 }
